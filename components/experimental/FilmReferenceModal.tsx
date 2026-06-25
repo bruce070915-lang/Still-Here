@@ -99,7 +99,7 @@ export function FilmReferenceModal({ film, flipState, onClose, onPreview, onRest
             <p><b>What STILL HERE borrows</b>{film.translationToStillHere}</p>
           </div>
           <div className="modal-actions">
-            <button type="button" onClick={() => onPreview(film)}>Preview This Look</button>
+            <button type="button" onClick={() => onPreview(film)}>Apply This Universe</button>
             <button type="button" onClick={onRestore}>Restore Original Look</button>
           </div>
         </LiquidGlass>

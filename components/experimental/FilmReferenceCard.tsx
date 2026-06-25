@@ -6,15 +6,17 @@ import { LiquidGlass } from "./LiquidGlass";
 
 type FilmReferenceCardProps = {
   film: FilmReference;
+  active?: boolean;
   onOpen: (film: FilmReference, element: HTMLElement) => void;
 };
 
-export function FilmReferenceCard({ film, onOpen }: FilmReferenceCardProps) {
+export function FilmReferenceCard({ film, active = false, onOpen }: FilmReferenceCardProps) {
   return (
     <button
       type="button"
       className="film-card"
       data-film-card={film.id}
+      data-active={active ? "true" : undefined}
       data-flip-id={`film-${film.id}`}
       onClick={(event) => onOpen(film, event.currentTarget)}
     >

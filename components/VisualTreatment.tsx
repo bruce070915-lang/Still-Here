@@ -23,8 +23,17 @@ import { SmoothScroll } from "@/components/ui/SmoothScroll";
 
 gsap.registerPlugin(ScrollTrigger, Flip);
 
+const memoryFragments = [
+  { label: "refrigerator note", image: siteContent.assets.note, className: "memory-fragment--note" },
+  { label: "returned toothbrush", image: siteContent.assets.toothbrush, className: "memory-fragment--toothbrush" },
+  { label: "photograph", image: siteContent.assets.photos, className: "memory-fragment--photo-a" },
+  { label: "photograph", image: siteContent.assets.frame, className: "memory-fragment--photo-b" },
+  { label: "black trash bag", image: siteContent.assets.bag, className: "memory-fragment--bag" }
+];
+
 export function VisualTreatment() {
   const [activeFilm, setActiveFilm] = useState<FilmReference | null>(null);
+  const [currentFilm, setCurrentFilm] = useState<FilmReference | null>(null);
   const [flipState, setFlipState] = useState<ReturnType<typeof Flip.getState> | null>(null);
   const [themeName, setThemeName] = useState("Original Look");
   const [soundReady, setSoundReady] = useState(false);
@@ -131,13 +140,49 @@ export function VisualTreatment() {
         opacity: 1,
         scrollTrigger: { trigger: "#closing", start: "35% 35%", end: "75% 20%", scrub: true }
       });
+
+      ScrollTrigger.create({
+        start: 0,
+        end: "max",
+        onUpdate: (self) => {
+          document.documentElement.style.setProperty("--memory-chaos", self.progress.toFixed(3));
+          document.documentElement.dataset.memoryPhase = self.progress > 0.82 ? "loop" : self.progress > 0.58 ? "crowded" : self.progress > 0.28 ? "returning" : "empty";
+        }
+      });
+
+      gsap.to(".memory-fragment", {
+        opacity: 1,
+        y: 0,
+        rotate: 0,
+        stagger: 0.08,
+        ease: "none",
+        scrollTrigger: { trigger: "#story", start: "top 70%", endTrigger: "#closing", end: "top 35%", scrub: true }
+      });
+
+      gsap.to(".bag-wipe", {
+        scaleX: 1,
+        opacity: 0.92,
+        ease: "power2.inOut",
+        scrollTrigger: { trigger: "#loop", start: "top 72%", end: "top 18%", scrub: true }
+      });
+
+      gsap.to(".hero-statement", {
+        clipPath: "inset(0% 0% 0% 0%)",
+        filter: "blur(0px)",
+        scrollTrigger: { trigger: "#opening", start: "top top", end: "55% top", scrub: true }
+      });
     });
 
-    return () => ctx.revert();
+    return () => {
+      ctx.revert();
+      document.documentElement.style.removeProperty("--memory-chaos");
+      delete document.documentElement.dataset.memoryPhase;
+    };
   }, []);
 
   function previewLook(film: FilmReference) {
     const root = document.documentElement;
+    root.dataset.cinematicLook = film.id;
     root.style.setProperty("--ink", film.cssTheme.ink);
     root.style.setProperty("--charcoal", film.cssTheme.charcoal);
     root.style.setProperty("--bone", film.cssTheme.bone);
@@ -148,18 +193,25 @@ export function VisualTreatment() {
     root.style.setProperty("--grain-opacity", film.cssTheme.grain);
     root.style.setProperty("--highlight", film.cssTheme.highlight);
     root.style.setProperty("--shadow", film.cssTheme.shadow);
+    root.style.setProperty("--look-a", film.palette[0]);
+    root.style.setProperty("--look-b", film.palette[2]);
+    root.style.setProperty("--look-c", film.palette[4]);
+    setCurrentFilm(film);
     setThemeName(film.cssTheme.name);
   }
 
   function restoreLook() {
     const root = document.documentElement;
-    ["--ink", "--charcoal", "--bone", "--refrigerator", "--cold", "--amber", "--warning", "--grain-opacity", "--highlight", "--shadow"].forEach((name) => {
+    delete root.dataset.cinematicLook;
+    ["--ink", "--charcoal", "--bone", "--refrigerator", "--cold", "--amber", "--warning", "--grain-opacity", "--highlight", "--shadow", "--look-a", "--look-b", "--look-c"].forEach((name) => {
       root.style.removeProperty(name);
     });
+    setCurrentFilm(null);
     setThemeName("Original Look");
   }
 
   function openFilm(film: FilmReference, element: HTMLElement) {
+    previewLook(film);
     setFlipState(Flip.getState(element));
     setActiveFilm(film);
   }
@@ -191,10 +243,24 @@ export function VisualTreatment() {
         <span />
         <span />
       </div>
+      <div className="memory-invasion" aria-hidden="true">
+        {memoryFragments.map((fragment) => (
+          <figure key={fragment.className} className={`memory-fragment ${fragment.className}`} style={{ backgroundImage: `url(${fragment.image})` }}>
+            <span>{fragment.label}</span>
+          </figure>
+        ))}
+        <div className="bag-wipe" />
+      </div>
       <FloatingNav />
       <main className="site-experience">
         <SectionShell id="opening" eyebrow="01 / Opening Sequence" tone="image" className="opening-section">
           <HeroMemoryLens reality={siteContent.assets.heroReality} memory={siteContent.assets.heroMemory} />
+          <div className="hero-statement" aria-hidden="true">
+            <span>STILL</span>
+            <span>HERE</span>
+          </div>
+          <div className="hero-door-slit" aria-hidden="true" />
+          <div className="hero-return-note" aria-hidden="true">{siteContent.noteText}</div>
           <div className="opening-signal" aria-hidden="true" />
           <button type="button" onClick={playBeep} className="sound-button">
             {soundReady ? "BEEP ARMED" : "SOUND ON"}
@@ -297,20 +363,32 @@ export function VisualTreatment() {
           </div>
         </SectionShell>
 
-        <SectionShell id="dna" eyebrow="07 / Visual References / Color Studies" className="dna-section">
+        <SectionShell id="dna" eyebrow="07 / Visual References / Color Studies" className={`dna-section ${currentFilm ? "dna-section--active-look" : ""}`}>
           <div className="dna-heading">
             <SectionLabel number="07" title="Visual References / Color Studies" />
-            <h2 className="gsap-reveal">Reference-film color, applied to STILL HERE imagery.</h2>
+            <h2 className="gsap-reveal">{currentFilm ? `Now entering ${currentFilm.title}.` : "Click a reference. Let it infect the film."}</h2>
             <p className="dna-note gsap-reveal">
-              These are not borrowed movie frames. Each reference uses this project’s apartment, objects and memory images to test color, contrast and emotional temperature.
+              {currentFilm
+                ? currentFilm.translationToStillHere
+                : "Each reference temporarily changes the website’s color, lighting, overlays, typography temperature and atmosphere."}
             </p>
             <div className="theme-indicator">
               Current: {themeName}
             </div>
+            {currentFilm ? (
+              <button type="button" className="restore-look-button" onClick={restoreLook}>
+                Restore Original Look
+              </button>
+            ) : null}
+          </div>
+          <div className="reference-universe" aria-live="polite">
+            <span>{currentFilm ? currentFilm.year : "Interactive Color System"}</span>
+            <b>{currentFilm ? currentFilm.keyword : "Choose a film reference"}</b>
+            <p>{currentFilm ? currentFilm.description : "The entire treatment changes when a reference is selected."}</p>
           </div>
           <div className="film-reference-grid">
             {filmReferences.map((film) => (
-              <FilmReferenceCard key={film.id} film={film} onOpen={openFilm} />
+              <FilmReferenceCard key={film.id} film={film} active={currentFilm?.id === film.id} onOpen={openFilm} />
             ))}
           </div>
         </SectionShell>

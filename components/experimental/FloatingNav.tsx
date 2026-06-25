@@ -107,6 +107,9 @@ export function FloatingNav() {
         <span>{String(activeIndex + 1).padStart(2, "0")}</span>
         <b>{activeItem.full}</b>
       </div>
+      <span className="nav-invasion nav-invasion--note" aria-hidden="true">We’re done.</span>
+      <span className="nav-invasion nav-invasion--photo" aria-hidden="true" />
+      <span className="nav-invasion nav-invasion--bag" aria-hidden="true" />
     </nav>
   );
 }
