@@ -69,58 +69,191 @@ body {
   clip-path: none !important;
 }
 
-.floating-nav {
-  left: 1.5rem !important;
-  bottom: 50% !important;
-  width: 2.9rem !important;
-  transform: translateY(50%) !important;
-  opacity: 0.54 !important;
+.floating-nav.scene-index {
+  position: fixed !important;
+  left: 50% !important;
+  top: clamp(0.72rem, 1.5vh, 1.05rem) !important;
+  bottom: auto !important;
+  z-index: 90 !important;
+  width: min(1320px, calc(100vw - 10rem)) !important;
+  min-height: 3.75rem !important;
+  transform: translateX(-50%) !important;
+  display: grid !important;
+  grid-template-columns: 9.8rem minmax(0, 1fr) 13rem !important;
+  gap: 0.75rem !important;
+  align-items: center !important;
+  padding: 0.48rem 0.56rem !important;
+  overflow: hidden !important;
+  opacity: 0.88 !important;
   border-radius: 999px !important;
-  background: rgba(255,255,255,0.055) !important;
-  border: 1px solid rgba(255,255,255,0.16) !important;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 20px 70px rgba(0,0,0,0.26) !important;
-  backdrop-filter: blur(22px) saturate(1.25) !important;
-  -webkit-backdrop-filter: blur(22px) saturate(1.25) !important;
+  border: 1px solid rgba(239,234,224,0.16) !important;
+  background:
+    radial-gradient(circle at calc(var(--scene-progress) * 100%) 0%, rgba(255,255,255,0.13), transparent 18rem),
+    linear-gradient(135deg, rgba(14,17,19,0.68), rgba(8,10,12,0.46)) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.18),
+    inset 0 -18px 36px rgba(0,0,0,0.2),
+    0 26px 80px rgba(0,0,0,0.34) !important;
+  backdrop-filter: blur(24px) saturate(1.25) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(1.25) !important;
 }
 
-.floating-nav .liquid-glass__inner {
-  flex-direction: column;
-  gap: 0.4rem;
-  padding: 0.75rem 0.25rem;
+.floating-nav.scene-index::before {
+  content: "";
+  position: absolute;
+  left: 0.8rem;
+  right: 0.8rem;
+  bottom: 0.34rem;
+  height: 1px;
+  background: rgba(239,234,224,0.12);
+}
+
+.floating-nav.scene-index::after {
+  content: "";
+  position: absolute;
+  left: 0.8rem;
+  bottom: 0.34rem;
+  width: calc((100% - 1.6rem) * var(--scene-progress));
+  height: 1px;
+  background: linear-gradient(90deg, rgba(214,161,106,0.2), rgba(239,234,224,0.9));
+  box-shadow: 0 0 18px rgba(214,161,106,0.36);
 }
 
 .nav-mark {
-  width: auto !important;
-  height: auto !important;
-  background: transparent !important;
+  position: relative !important;
+  z-index: 2 !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  height: 2.55rem !important;
+  display: grid !important;
+  align-content: center !important;
+  gap: 0.16rem !important;
+  padding: 0 1rem !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(239,234,224,0.12) !important;
+  background: rgba(255,255,255,0.045) !important;
   color: var(--poster-ink) !important;
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  font-size: 0.55rem !important;
-  letter-spacing: 0.36em !important;
+  writing-mode: horizontal-tb !important;
+  text-orientation: mixed !important;
+  text-align: left !important;
+  font-family: "IBM Plex Mono", monospace !important;
+}
+
+.nav-mark span,
+.nav-mark i,
+.nav-current span,
+.nav-current b,
+.nav-items button span,
+.nav-items button i {
+  display: block !important;
+  font-style: normal !important;
+  text-transform: uppercase !important;
+}
+
+.nav-mark span {
+  font-size: 0.58rem !important;
+  letter-spacing: 0.32em !important;
+  color: rgba(239,234,224,0.82) !important;
+}
+
+.nav-mark i {
+  font-size: 0.47rem !important;
+  letter-spacing: 0.24em !important;
+  color: rgba(214,161,106,0.72) !important;
 }
 
 .nav-items {
-  flex-direction: column;
-  align-items: center;
-  gap: 0.1rem;
+  position: relative !important;
+  z-index: 2 !important;
+  min-width: 0 !important;
+  display: grid !important;
+  grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+  gap: 0.22rem !important;
+  align-items: stretch !important;
 }
 
 .nav-items button {
-  width: 1.9rem;
-  height: 1.62rem;
-  padding: 0 !important;
-  font-size: 0.56rem !important;
-  color: rgba(239,234,224,0.4) !important;
+  position: relative !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  height: 2.55rem !important;
+  padding: 0.38rem 0.28rem 0.3rem !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  align-content: center !important;
+  gap: 0.12rem !important;
+  border-radius: 999px !important;
+  border: 1px solid transparent !important;
+  background: transparent !important;
+  color: rgba(239,234,224,0.44) !important;
+  text-align: center !important;
+  transition: color 220ms ease, background 220ms ease, border-color 220ms ease, transform 220ms ease !important;
 }
 
 .nav-items button span {
-  display: none;
+  width: auto !important;
+  font-family: "IBM Plex Mono", monospace !important;
+  font-size: 0.48rem !important;
+  letter-spacing: 0.14em !important;
+  color: rgba(239,234,224,0.33) !important;
 }
 
-.nav-items button:hover {
-  color: var(--poster-ink) !important;
-  background: rgba(255,255,255,0.08) !important;
+.nav-items button i {
+  opacity: 1 !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  font-family: "Space Grotesk", system-ui, sans-serif !important;
+  font-size: clamp(0.54rem, 0.58vw, 0.66rem) !important;
+  letter-spacing: 0.01em !important;
+  color: currentColor !important;
+}
+
+.nav-items button:hover,
+.nav-items button:focus-visible,
+.nav-items button[aria-current="step"] {
+  color: rgba(239,234,224,0.94) !important;
+  border-color: rgba(239,234,224,0.18) !important;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,255,255,0.14), transparent 56%),
+    rgba(255,255,255,0.065) !important;
+  transform: translateY(-1px) !important;
+}
+
+.nav-items button[aria-current="step"] span {
+  color: rgba(214,161,106,0.92) !important;
+}
+
+.nav-current {
+  position: relative !important;
+  z-index: 2 !important;
+  min-width: 0 !important;
+  height: 2.55rem !important;
+  display: grid !important;
+  grid-template-columns: auto minmax(0, 1fr) !important;
+  gap: 0.65rem !important;
+  align-items: center !important;
+  padding: 0 1rem !important;
+  border-left: 1px solid rgba(239,234,224,0.14) !important;
+}
+
+.nav-current span {
+  font-family: "IBM Plex Mono", monospace !important;
+  font-size: 0.58rem !important;
+  letter-spacing: 0.18em !important;
+  color: rgba(214,161,106,0.86) !important;
+}
+
+.nav-current b {
+  min-width: 0 !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  font-family: "Space Grotesk", system-ui, sans-serif !important;
+  font-size: 0.72rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.06em !important;
+  color: rgba(239,234,224,0.84) !important;
 }
 
 .liquid-glass {
@@ -1676,7 +1809,538 @@ body {
   gap: 0.9rem 2.2rem !important;
 }
 
+/* --------------------------------------------------------------------------
+   Unforgettable scene direction pass: every chapter gets its own blocking.
+   -------------------------------------------------------------------------- */
+
+.story-section {
+  background:
+    radial-gradient(circle at 18% 10%, rgba(122,142,158,0.14), transparent 26rem),
+    linear-gradient(180deg, rgba(255,255,255,0.012), rgba(255,255,255,0.03)) !important;
+}
+
+.story-rail {
+  gap: 0 !important;
+}
+
+.story-chapter {
+  position: relative !important;
+  height: 100svh !important;
+  min-height: 100svh !important;
+  padding: 0 !important;
+  display: grid !important;
+  overflow: hidden !important;
+  border-top: 1px solid rgba(239,234,224,0.08) !important;
+}
+
+.story-chapter::before {
+  content: attr(data-chapter);
+  position: absolute;
+  z-index: 4;
+  left: clamp(4.8rem, 6vw, 7.2rem);
+  top: clamp(5.2rem, 8vh, 7rem);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.56rem;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: rgba(214,161,106,0.58);
+}
+
+.story-chapter .chapter-media {
+  max-width: none !important;
+  height: auto !important;
+  min-height: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.story-chapter .chapter-copy {
+  max-width: none !important;
+  width: auto !important;
+  z-index: 6 !important;
+}
+
+.story-chapter .chapter-copy h3 {
+  margin: 0 0 clamp(1rem, 2vh, 1.6rem) !important;
+  font-size: clamp(4.2rem, 8vw, 10rem) !important;
+  line-height: 0.82 !important;
+  letter-spacing: -0.07em !important;
+}
+
+.story-chapter .chapter-copy p {
+  max-width: 34rem !important;
+  color: rgba(239,234,224,0.72) !important;
+}
+
+.story-chapter .chapter-copy small {
+  margin-top: clamp(1rem, 2vh, 1.7rem) !important;
+  padding-top: 0.85rem !important;
+  border-top: 1px solid rgba(239,234,224,0.18) !important;
+  font-family: "IBM Plex Mono", monospace !important;
+  letter-spacing: 0.32em !important;
+  text-transform: uppercase !important;
+  color: rgba(214,161,106,0.72) !important;
+}
+
+.story-chapter[data-chapter="return"] {
+  grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+  background: #050607 !important;
+}
+
+.story-chapter[data-chapter="return"] .chapter-media {
+  position: absolute !important;
+  inset: 0 !important;
+  opacity: 0.86 !important;
+  filter: saturate(0.92) brightness(0.82) contrast(1.05) !important;
+}
+
+.story-chapter[data-chapter="return"] .chapter-media__veil {
+  background:
+    linear-gradient(90deg, rgba(0,0,0,0.78), transparent 48%, rgba(0,0,0,0.72)),
+    radial-gradient(circle at 60% 42%, transparent, rgba(0,0,0,0.72) 74%) !important;
+}
+
+.story-chapter[data-chapter="return"] .chapter-copy {
+  grid-column: 2 / 8 !important;
+  align-self: end !important;
+  margin-bottom: clamp(5rem, 9vh, 8rem) !important;
+  padding: clamp(1.35rem, 2.5vw, 2rem) !important;
+  border-left: 1px solid rgba(239,234,224,0.18) !important;
+  background: linear-gradient(90deg, rgba(5,6,7,0.5), transparent) !important;
+}
+
+.story-chapter[data-chapter="disposal"] {
+  grid-template-columns: minmax(0, 0.48fr) minmax(0, 1fr) minmax(0, 0.52fr) !important;
+  background:
+    linear-gradient(90deg, #030404, #090c0e 48%, #030404) !important;
+}
+
+.story-chapter[data-chapter="disposal"] .chapter-media {
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+  width: min(24vw, 28rem) !important;
+  height: 86vh !important;
+  justify-self: center !important;
+  align-self: center !important;
+  clip-path: polygon(18% 0, 92% 0, 74% 100%, 0 100%) !important;
+  opacity: 0.82 !important;
+}
+
+.story-chapter[data-chapter="disposal"] .chapter-copy {
+  grid-column: 3 !important;
+  grid-row: 1 !important;
+  align-self: center !important;
+  padding-right: clamp(3rem, 6vw, 7rem) !important;
+}
+
+.story-chapter[data-chapter="disposal"] .chapter-copy h3 {
+  writing-mode: vertical-rl !important;
+  text-orientation: mixed !important;
+  max-height: 74vh !important;
+  font-size: clamp(4.4rem, 7.4vw, 8.8rem) !important;
+  line-height: 0.86 !important;
+}
+
+.story-chapter[data-chapter="disposal"] .chapter-copy p,
+.story-chapter[data-chapter="disposal"] .chapter-copy small {
+  margin-left: clamp(2rem, 4vw, 4rem) !important;
+}
+
+.story-chapter[data-chapter="reappearance"] {
+  grid-template-columns: 1fr 1fr !important;
+  background:
+    radial-gradient(circle at 30% 40%, rgba(158,180,198,0.13), transparent 26rem),
+    #080b0d !important;
+}
+
+.story-chapter[data-chapter="reappearance"] .chapter-media {
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+  width: 58vw !important;
+  height: 78vh !important;
+  align-self: center !important;
+  justify-self: start !important;
+  margin-left: clamp(4.4rem, 7vw, 8rem) !important;
+  clip-path: inset(0 round 999px 999px 2rem 2rem) !important;
+  opacity: 0.9 !important;
+}
+
+.story-chapter[data-chapter="reappearance"] .chapter-copy {
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+  align-self: center !important;
+  margin-right: clamp(4rem, 7vw, 8rem) !important;
+  transform: translateX(-4vw) !important;
+}
+
+.story-chapter[data-chapter="reappearance"] .chapter-copy h3 {
+  font-size: clamp(3.6rem, 6.7vw, 7.8rem) !important;
+}
+
+.story-chapter[data-chapter="accumulation"] {
+  grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.04)),
+    #07090a !important;
+}
+
+.story-chapter[data-chapter="accumulation"] .chapter-media {
+  grid-column: 6 / 13 !important;
+  grid-row: 1 !important;
+  width: 100% !important;
+  height: 72vh !important;
+  align-self: center !important;
+  clip-path: polygon(0 8%, 100% 0, 94% 96%, 8% 100%) !important;
+  opacity: 0.78 !important;
+}
+
+.story-chapter[data-chapter="accumulation"] .chapter-copy {
+  grid-column: 1 / 8 !important;
+  grid-row: 1 !important;
+  align-self: center !important;
+  padding-left: clamp(4.8rem, 6vw, 7.2rem) !important;
+}
+
+.story-chapter[data-chapter="accumulation"] .chapter-copy h3 {
+  max-width: 8.4ch !important;
+  font-size: clamp(4rem, 7.2vw, 8.5rem) !important;
+}
+
+.story-chapter[data-chapter="confrontation"] {
+  grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+  background: #020303 !important;
+}
+
+.story-chapter[data-chapter="confrontation"] .chapter-media {
+  position: absolute !important;
+  inset: 12vh 8vw 10vh 8vw !important;
+  width: auto !important;
+  height: auto !important;
+  clip-path: polygon(4% 0, 98% 7%, 92% 100%, 0 92%) !important;
+  opacity: 0.58 !important;
+  filter: saturate(0.92) brightness(0.72) contrast(1.15) !important;
+}
+
+.story-chapter[data-chapter="confrontation"] .chapter-copy {
+  grid-column: 2 / 7 !important;
+  align-self: center !important;
+  padding: clamp(1.2rem, 2vw, 1.7rem) !important;
+  background: rgba(2,3,3,0.42) !important;
+  backdrop-filter: blur(18px) saturate(1.08) !important;
+  border: 1px solid rgba(239,234,224,0.13) !important;
+}
+
+.story-chapter[data-chapter="confrontation"] .chapter-copy h3 {
+  font-size: clamp(3.2rem, 5.9vw, 6.8rem) !important;
+}
+
+.story-chapter[data-chapter="door-opens"] {
+  grid-template-columns: minmax(0, 1fr) 1px minmax(0, 1fr) !important;
+  background:
+    radial-gradient(circle at 51% 48%, rgba(239,234,224,0.08), transparent 18rem),
+    #000 !important;
+}
+
+.story-chapter[data-chapter="door-opens"]::after {
+  content: "";
+  grid-column: 2;
+  grid-row: 1;
+  align-self: stretch;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, rgba(239,234,224,0.62), transparent);
+  box-shadow: 0 0 46px rgba(158,180,198,0.28);
+  z-index: 5;
+}
+
+.story-chapter[data-chapter="door-opens"] .chapter-media {
+  position: absolute !important;
+  inset: 0 !important;
+  opacity: 0.32 !important;
+  filter: saturate(0.72) brightness(0.7) contrast(1.18) !important;
+}
+
+.story-chapter[data-chapter="door-opens"] .chapter-copy {
+  grid-column: 3 !important;
+  grid-row: 1 !important;
+  align-self: center !important;
+  justify-self: start !important;
+  max-width: 40rem !important;
+  margin-left: clamp(3rem, 6vw, 7rem) !important;
+}
+
+.story-chapter[data-chapter="door-opens"] .chapter-copy h3 {
+  max-width: 7ch !important;
+  font-size: clamp(4rem, 7.8vw, 9.2rem) !important;
+}
+
+.dna-section {
+  height: 100svh !important;
+  padding: clamp(5rem, 8vh, 7rem) clamp(4.5rem, 6vw, 7.5rem) clamp(3rem, 5vh, 4rem) !important;
+  overflow: hidden !important;
+  background:
+    radial-gradient(circle at 72% 12%, rgba(214,161,106,0.1), transparent 19rem),
+    radial-gradient(circle at 18% 76%, rgba(158,180,198,0.12), transparent 24rem),
+    #050607 !important;
+}
+
+.dna-heading {
+  position: relative !important;
+  z-index: 6 !important;
+  display: block !important;
+  width: min(44rem, 42vw) !important;
+  margin: 0 !important;
+}
+
+.dna-heading h2 {
+  max-width: 11ch !important;
+  font-size: clamp(4.4rem, 7.2vw, 8.7rem) !important;
+  line-height: 0.84 !important;
+}
+
+.dna-note {
+  max-width: 31rem !important;
+  margin-top: clamp(1.4rem, 3vh, 2.2rem) !important;
+}
+
+.theme-indicator {
+  display: inline-block !important;
+  margin-top: clamp(1.2rem, 2.5vh, 1.9rem) !important;
+}
+
+.film-reference-grid {
+  position: absolute !important;
+  inset: clamp(5rem, 8vh, 7rem) clamp(4rem, 5vw, 6rem) clamp(4rem, 7vh, 6rem) 43vw !important;
+  min-height: 0 !important;
+  display: grid !important;
+  grid-template-columns: repeat(9, minmax(0, 1fr)) !important;
+  grid-template-rows: repeat(6, minmax(0, 1fr)) !important;
+  gap: clamp(0.75rem, 1vw, 1.1rem) !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+.film-card {
+  min-height: 0 !important;
+  border: 1px solid rgba(239,234,224,0.12) !important;
+  border-radius: clamp(1rem, 1.5vw, 1.65rem) !important;
+  overflow: hidden !important;
+  box-shadow: 0 34px 95px rgba(0,0,0,0.38) !important;
+}
+
+.film-card:nth-child(1) {
+  grid-column: 1 / 5 !important;
+  grid-row: 1 / 4 !important;
+}
+
+.film-card:nth-child(2) {
+  grid-column: 5 / 10 !important;
+  grid-row: 1 / 3 !important;
+}
+
+.film-card:nth-child(3) {
+  grid-column: 4 / 8 !important;
+  grid-row: 3 / 7 !important;
+}
+
+.film-card:nth-child(4) {
+  grid-column: 1 / 4 !important;
+  grid-row: 4 / 7 !important;
+}
+
+.film-card:nth-child(5) {
+  grid-column: 8 / 10 !important;
+  grid-row: 3 / 7 !important;
+}
+
+.visual-language-section {
+  position: relative !important;
+  height: 100svh !important;
+  padding: clamp(5rem, 8vh, 7rem) clamp(4.5rem, 6vw, 7.5rem) !important;
+  overflow: hidden !important;
+  background:
+    linear-gradient(90deg, rgba(239,234,224,0.045) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(239,234,224,0.035) 1px, transparent 1px),
+    radial-gradient(circle at 66% 48%, rgba(158,180,198,0.14), transparent 24rem),
+    #080a0c !important;
+  background-size: 25vw 33.333%, 25vw 33.333%, auto, auto !important;
+}
+
+.visual-language-section > h2 {
+  position: absolute !important;
+  left: clamp(4.5rem, 6vw, 7.5rem) !important;
+  top: clamp(5.6rem, 9vh, 8rem) !important;
+  width: min(52rem, 50vw) !important;
+  max-width: none !important;
+  font-size: clamp(4.8rem, 8.3vw, 10.2rem) !important;
+  line-height: 0.84 !important;
+  z-index: 3 !important;
+}
+
+.visual-language-section::after {
+  content: "";
+  position: absolute;
+  right: clamp(5rem, 8vw, 10rem);
+  top: 18vh;
+  width: min(42vw, 46rem);
+  height: 58vh;
+  border: 1px solid rgba(239,234,224,0.14);
+  clip-path: polygon(0 0, 100% 8%, 92% 100%, 8% 92%);
+  background:
+    radial-gradient(circle at 50% 40%, rgba(239,234,224,0.04), transparent 42%),
+    linear-gradient(135deg, rgba(255,255,255,0.025), rgba(255,255,255,0.005));
+}
+
+.language-grid {
+  position: absolute !important;
+  inset: auto clamp(4.5rem, 6vw, 7.5rem) clamp(5rem, 8vh, 7rem) auto !important;
+  width: min(58vw, 68rem) !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  display: grid !important;
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  gap: 0.7rem !important;
+  border: 0 !important;
+  background: transparent !important;
+  z-index: 5 !important;
+}
+
+.language-panel {
+  min-height: 15rem !important;
+  border: 1px solid rgba(239,234,224,0.13) !important;
+  border-radius: 999px 999px 1.2rem 1.2rem !important;
+  background: rgba(5,7,8,0.46) !important;
+  backdrop-filter: blur(14px) saturate(1.1) !important;
+}
+
+.language-panel:nth-child(even) {
+  transform: translateY(-2.2rem) !important;
+}
+
+.director-profile {
+  position: relative !important;
+  grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+  overflow: hidden !important;
+  background:
+    radial-gradient(circle at 26% 28%, rgba(214,161,106,0.08), transparent 22rem),
+    #050607 !important;
+}
+
+.director-photo {
+  position: absolute !important;
+  right: 0 !important;
+  top: 0 !important;
+  width: min(58vw, 70rem) !important;
+  height: 100svh !important;
+  clip-path: polygon(14% 0, 100% 0, 100% 100%, 0 100%) !important;
+  opacity: 0.72 !important;
+}
+
+.director-copy {
+  grid-column: 1 / 8 !important;
+  position: relative !important;
+  z-index: 4 !important;
+  align-self: center !important;
+  padding: 0 0 0 clamp(4.5rem, 6vw, 7.5rem) !important;
+}
+
+.director-copy h2 {
+  font-size: clamp(5.6rem, 9.4vw, 10.6rem) !important;
+  max-width: 8ch !important;
+}
+
+.director-label {
+  width: min(37rem, 42vw) !important;
+}
+
+.production-section {
+  height: 100svh !important;
+  overflow: hidden !important;
+  display: grid !important;
+  place-items: center !important;
+  background:
+    radial-gradient(circle at 22% 18%, rgba(158,180,198,0.12), transparent 23rem),
+    linear-gradient(135deg, #07090b, #020303) !important;
+}
+
+.production-file {
+  width: min(1180px, 78vw) !important;
+  min-height: 66vh !important;
+  display: grid !important;
+  grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+  grid-template-rows: repeat(4, minmax(0, 1fr)) !important;
+  gap: 1px !important;
+  padding: 1px !important;
+  border: 1px solid rgba(239,234,224,0.16) !important;
+  border-radius: 2.2rem !important;
+  background: rgba(239,234,224,0.14) !important;
+  overflow: hidden !important;
+  transform: rotate(-1deg) !important;
+}
+
+.production-file div {
+  margin: 0 !important;
+  padding: clamp(1rem, 1.6vw, 1.6rem) !important;
+  min-height: 0 !important;
+  display: grid !important;
+  align-content: end !important;
+  border: 0 !important;
+  background: rgba(5,7,8,0.72) !important;
+}
+
+.production-file div:nth-child(1) {
+  grid-column: 1 / 4 !important;
+  grid-row: 1 / 3 !important;
+}
+
+.production-file div:nth-child(1) b {
+  font-size: clamp(4rem, 8vw, 9rem) !important;
+  line-height: 0.82 !important;
+  letter-spacing: -0.08em !important;
+}
+
+.production-file div:nth-child(4) {
+  grid-column: 4 / 7 !important;
+  grid-row: 1 / 2 !important;
+}
+
+.production-file div:nth-child(5) {
+  grid-column: 4 / 7 !important;
+  grid-row: 2 / 3 !important;
+}
+
+.production-file div:nth-child(6) {
+  grid-column: 1 / 3 !important;
+  grid-row: 3 / 5 !important;
+}
+
+.production-file div:nth-child(7),
+.production-file div:nth-child(8),
+.production-file div:nth-child(9) {
+  grid-row: 4 / 5 !important;
+}
+
+.production-file div:nth-child(7) {
+  grid-column: 3 / 4 !important;
+}
+
+.production-file div:nth-child(8) {
+  grid-column: 4 / 5 !important;
+}
+
+.production-file div:nth-child(9) {
+  grid-column: 5 / 7 !important;
+}
+
 @media (max-width: 1180px) {
+  .floating-nav.scene-index {
+    width: min(1040px, calc(100vw - 4rem)) !important;
+    grid-template-columns: 8rem minmax(0, 1fr) 10rem !important;
+  }
+
+  .nav-items button i {
+    font-size: 0.52rem !important;
+  }
+
   .story-chapter,
   .story-chapter:nth-child(even) {
     grid-template-columns: minmax(0, 0.78fr) minmax(0, 1fr) !important;
@@ -1714,4 +2378,276 @@ body {
     grid-row: auto !important;
     max-width: 100% !important;
   }
+}
+
+/* --------------------------------------------------------------------------
+   Final scene safety pass: keep the experimental poster scale, but prevent
+   navigation compression, title clipping and image/text collisions on desktop.
+   -------------------------------------------------------------------------- */
+
+.floating-nav.scene-index {
+  width: min(1380px, calc(100vw - 7rem)) !important;
+  grid-template-columns: 9.4rem minmax(0, 1fr) 12.2rem !important;
+}
+
+.nav-items button {
+  min-width: 0 !important;
+}
+
+.nav-items button i,
+.nav-current b {
+  min-width: 0 !important;
+  opacity: 1 !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.opening-section .opening-copy {
+  grid-template-columns: minmax(0, 0.82fr) minmax(23rem, 0.48fr) !important;
+}
+
+.opening-section .kinetic-title {
+  width: min(47rem, 49vw) !important;
+  line-height: 1 !important;
+}
+
+.opening-section .title-still {
+  font-size: clamp(5.35rem, 10.9vw, 12rem) !important;
+  letter-spacing: -0.048em !important;
+}
+
+.opening-section .title-here {
+  margin-top: 0.02em !important;
+  margin-left: clamp(1.2rem, 4.8vw, 5.1rem) !important;
+  font-size: clamp(4.45rem, 8.75vw, 9.55rem) !important;
+  letter-spacing: -0.04em !important;
+}
+
+.opening-section .opening-logline {
+  width: min(31rem, 31vw) !important;
+}
+
+.story-chapter .chapter-copy h3 {
+  overflow: visible !important;
+}
+
+.story-chapter[data-chapter="disposal"] {
+  grid-template-columns: minmax(4rem, 0.42fr) minmax(20rem, 0.86fr) minmax(18rem, 0.56fr) !important;
+}
+
+.story-chapter[data-chapter="disposal"] .chapter-media {
+  width: min(22vw, 24rem) !important;
+  height: min(76vh, 740px) !important;
+}
+
+.story-chapter[data-chapter="disposal"] .chapter-copy {
+  align-self: center !important;
+  padding-top: clamp(3rem, 7vh, 5.5rem) !important;
+  padding-right: clamp(3rem, 5vw, 5.8rem) !important;
+}
+
+.story-chapter[data-chapter="disposal"] .chapter-copy h3 {
+  max-height: 56vh !important;
+  margin-bottom: clamp(1rem, 2vh, 1.4rem) !important;
+  font-size: clamp(3.25rem, 5.4vw, 6.25rem) !important;
+  line-height: 0.88 !important;
+  letter-spacing: -0.044em !important;
+}
+
+.story-chapter[data-chapter="disposal"] .chapter-copy p {
+  max-width: 20rem !important;
+  font-size: clamp(0.9rem, 0.98vw, 1.02rem) !important;
+  line-height: 1.45 !important;
+}
+
+.story-chapter[data-chapter="disposal"] .chapter-copy small {
+  max-width: 18rem !important;
+  font-size: 0.56rem !important;
+  letter-spacing: 0.24em !important;
+}
+
+.story-chapter[data-chapter="reappearance"] {
+  grid-template-columns: minmax(0, 0.94fr) minmax(0, 1.06fr) !important;
+}
+
+.story-chapter[data-chapter="reappearance"] .chapter-media {
+  width: min(51vw, 870px) !important;
+  height: min(74vh, 720px) !important;
+  margin-left: clamp(3.5rem, 5.4vw, 6rem) !important;
+}
+
+.story-chapter[data-chapter="reappearance"] .chapter-copy {
+  max-width: min(39rem, 40vw) !important;
+  transform: translateX(-1.6vw) !important;
+}
+
+.story-chapter[data-chapter="reappearance"] .chapter-copy h3 {
+  font-size: clamp(2.75rem, 4.7vw, 5.45rem) !important;
+  letter-spacing: -0.035em !important;
+  white-space: nowrap !important;
+}
+
+.story-chapter[data-chapter="accumulation"] .chapter-media {
+  grid-column: 7 / 13 !important;
+  width: 90% !important;
+  height: min(70vh, 690px) !important;
+  justify-self: end !important;
+}
+
+.story-chapter[data-chapter="accumulation"] .chapter-copy {
+  grid-column: 1 / 6 !important;
+  max-width: min(39rem, 39vw) !important;
+  padding-left: clamp(4.6rem, 6vw, 7rem) !important;
+}
+
+.story-chapter[data-chapter="accumulation"] .chapter-copy h3 {
+  max-width: none !important;
+  font-size: clamp(2.85rem, 4.9vw, 5.65rem) !important;
+  letter-spacing: -0.036em !important;
+  white-space: nowrap !important;
+}
+
+.story-chapter[data-chapter="confrontation"] .chapter-media {
+  inset: 13vh 7vw 11vh 39vw !important;
+  opacity: 0.66 !important;
+}
+
+.story-chapter[data-chapter="confrontation"] .chapter-copy {
+  grid-column: 2 / 7 !important;
+  max-width: min(42rem, 41vw) !important;
+}
+
+.story-chapter[data-chapter="confrontation"] .chapter-copy h3 {
+  font-size: clamp(2.8rem, 4.65vw, 5.35rem) !important;
+  letter-spacing: -0.034em !important;
+  white-space: nowrap !important;
+}
+
+.visual-mood-section .mood-poster {
+  grid-template-rows: 0.74fr 0.78fr 0.74fr 0.8fr 0.72fr !important;
+}
+
+.visual-mood-section .mood-heading h2 {
+  max-width: min(39rem, 41vw) !important;
+  font-size: clamp(3.45rem, 6.15vw, 7.25rem) !important;
+  line-height: 0.92 !important;
+  letter-spacing: -0.055em !important;
+}
+
+.visual-mood-section .mood-heading p {
+  max-width: min(29rem, 29vw) !important;
+  margin-left: 0 !important;
+  font-size: clamp(0.98rem, 1.03vw, 1.12rem) !important;
+}
+
+.visual-mood-section .mood-texture-note {
+  grid-column: 6 / 9 !important;
+  grid-row: 2 / 4 !important;
+  align-self: center !important;
+  margin-top: 0 !important;
+}
+
+.closing-final-card {
+  width: min(1160px, 80vw) !important;
+  grid-template-rows: 27vh auto auto auto 1fr !important;
+}
+
+.closing-final-card h2 {
+  font-size: clamp(3.95rem, 8.2vw, 8.8rem) !important;
+  line-height: 0.96 !important;
+  gap: clamp(2.2rem, 4.8vw, 5.8rem) !important;
+}
+
+.closing-final-thesis {
+  margin-top: clamp(3.2rem, 6.5vh, 4.8rem) !important;
+  font-size: clamp(1.62rem, 2.84vw, 3.08rem) !important;
+  line-height: 1.2 !important;
+}
+
+.closing-final-thanks {
+  margin-top: clamp(3.2rem, 6.6vh, 4.8rem) !important;
+}
+
+.story-chapter[data-chapter="confrontation"] .chapter-media {
+  inset: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  clip-path: none !important;
+  opacity: 0.74 !important;
+  filter: saturate(1.03) brightness(1.03) contrast(1.08) !important;
+  z-index: 0 !important;
+}
+
+.story-chapter[data-chapter="confrontation"] .chapter-media img {
+  object-position: 58% center !important;
+  transform: scale(1.04) !important;
+  filter: saturate(1.05) brightness(1.14) contrast(1.08) !important;
+}
+
+.story-chapter[data-chapter="confrontation"] .chapter-media__veil {
+  background:
+    linear-gradient(90deg, rgba(0,0,0,0.84), rgba(0,0,0,0.54) 36%, rgba(0,0,0,0.18) 68%, rgba(0,0,0,0.72)),
+    linear-gradient(180deg, rgba(0,0,0,0.28), rgba(0,0,0,0.16) 44%, rgba(0,0,0,0.62)) !important;
+}
+
+.visual-language-section > h2 {
+  left: clamp(4.5rem, 6vw, 7rem) !important;
+  top: clamp(7.4rem, 13vh, 9.5rem) !important;
+  width: min(39rem, 39vw) !important;
+  max-width: min(39rem, 39vw) !important;
+  font-size: clamp(3.65rem, 6.15vw, 7.25rem) !important;
+  line-height: 0.9 !important;
+  letter-spacing: -0.056em !important;
+  text-wrap: balance !important;
+  z-index: 4 !important;
+}
+
+.visual-language-section::after {
+  right: clamp(4.5rem, 6vw, 7rem) !important;
+  top: 17vh !important;
+  width: min(45vw, 52rem) !important;
+  height: 62vh !important;
+  opacity: 0.64 !important;
+}
+
+.visual-language-section .language-grid {
+  inset: auto clamp(4.5rem, 6vw, 7rem) clamp(6.2rem, 9vh, 7.4rem) 48vw !important;
+  width: auto !important;
+  max-width: none !important;
+  display: grid !important;
+  grid-template-columns: 1.05fr 0.92fr 0.96fr 0.92fr 1fr !important;
+  gap: clamp(0.6rem, 0.9vw, 0.85rem) !important;
+  align-items: end !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+.visual-language-section .language-panel {
+  min-height: clamp(16.5rem, 43vh, 29rem) !important;
+  padding: clamp(1.05rem, 1.35vw, 1.4rem) !important;
+  border: 1px solid rgba(239,234,224,0.14) !important;
+  border-radius: 999px 999px 1.2rem 1.2rem !important;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,255,255,0.08), transparent 48%),
+    rgba(5,7,8,0.48) !important;
+  backdrop-filter: blur(14px) saturate(1.1) !important;
+}
+
+.visual-language-section .language-panel:nth-child(even) {
+  transform: translateY(-2.2rem) !important;
+}
+
+.visual-language-section .language-panel:nth-child(3) {
+  transform: translateY(1.1rem) !important;
+}
+
+.visual-language-section .language-panel h3 {
+  font-size: clamp(1.55rem, 1.85vw, 2.12rem) !important;
+  line-height: 0.98 !important;
+}
+
+.visual-language-section .language-panel p {
+  font-size: clamp(0.84rem, 0.92vw, 0.98rem) !important;
+  line-height: 1.42 !important;
 }
