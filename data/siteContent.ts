@@ -65,14 +65,21 @@ export const directorProfile = {
 };
 
 export const actorProfile = {
-  name: "To Be Announced",
-  character: "To Be Announced",
+  name: "Yuliang Jia (Jason)",
+  character: "The Young Man",
+  subtitle: "Chinese Actor",
   photo: siteContent.assets.actorPhoto,
-  photoReady: false,
-  bio: "Actor biography will be added after casting information is confirmed.",
-  performanceBackground: "Performance background and selected experience will be added later.",
-  characterDescription:
-    "Character description will be added after the final production materials are confirmed."
+  photoReady: true,
+  playingAge: "20–30",
+  languages: "Mandarin Chinese · English",
+  bio:
+    "Yuliang Jia is a Chinese actor whose work centers on restrained, emotionally layered performances. He is particularly drawn to psychologically complex characters whose inner conflicts are revealed through subtle expression, silence, and controlled emotional rhythm. His calm on-screen presence and attention to detail make him especially suited to the quiet emotional journey at the heart of STILL HERE.",
+  performanceFocus: [
+    "Psychological Drama",
+    "Emotional Restraint",
+    "Subtle Character Work",
+    "Quiet Intensity"
+  ]
 };
 
 export const visualLanguage = [

@@ -1,38 +1,53 @@
 import Image from "next/image";
 import { actorProfile, siteContent } from "@/data/siteContent";
+import { LiquidGlass } from "./LiquidGlass";
 
 export function LeadActorProfile() {
   return (
-    <div className="actor-profile actor-profile--single actor-profile--cinema">
+    <div className="actor-profile actor-profile--single actor-profile--cinema actor-profile--festival">
       <div className="actor-background-still" style={{ backgroundImage: `url(${siteContent.assets.heroReality})` }} aria-hidden="true" />
-      <div className="actor-portrait-stage">
-        <div className="actor-portrait-placeholder actor-portrait-placeholder--cinema">
-          {actorProfile.photoReady ? (
-            <Image src={actorProfile.photo} alt={actorProfile.name} fill sizes="52vw" className="object-cover" />
-          ) : (
-            <>
-              <span>Lead actor portrait reserved</span>
-              <small>{actorProfile.photo}</small>
-            </>
-          )}
+      <p className="actor-section-code" aria-hidden="true">10 / Lead Actor</p>
+      <figure className="actor-portrait-stage">
+        <div className="actor-portrait-placeholder actor-portrait-placeholder--cinema actor-portrait-frame">
+          <Image
+            src={actorProfile.photo}
+            alt={actorProfile.name}
+            fill
+            priority={false}
+            sizes="(max-width: 900px) 92vw, 48vw"
+            className="object-cover"
+          />
         </div>
-        <p className="actor-stage-note">One visible performer carries the film’s silence.</p>
-      </div>
-      <div className="actor-copy actor-copy--dossier">
+        <figcaption className="actor-stage-note">One visible performer carries the film’s silence.</figcaption>
+      </figure>
+      <article className="actor-copy actor-copy--dossier actor-editorial-copy">
         <span className="vertical-meta">ONLY ONSCREEN PERFORMANCE</span>
-        <p className="actor-kicker">Lead Actor / Casting Pending</p>
+        <p className="actor-kicker">{actorProfile.subtitle}</p>
         <h2>{actorProfile.character}</h2>
         <div className="actor-casting-line">
           <span>Actor</span>
           <b>{actorProfile.name}</b>
         </div>
-        <p className="actor-character-description">{actorProfile.characterDescription}</p>
-        <div className="actor-text-grid">
-          <p><b>Actor Bio</b>{actorProfile.bio}</p>
-          <p><b>Acting Experience</b>{actorProfile.performanceBackground}</p>
-        </div>
-        <p className="actor-placeholder-note">No actor name, biography, credits, awards or quote will be added until casting information is confirmed.</p>
-      </div>
+        <LiquidGlass className="actor-meta-glass" intensity="quiet">
+          <div>
+            <span>Playing Age</span>
+            <strong>{actorProfile.playingAge}</strong>
+          </div>
+          <div>
+            <span>Languages</span>
+            <strong>{actorProfile.languages}</strong>
+          </div>
+        </LiquidGlass>
+        <p className="actor-character-description actor-bio-editorial">{actorProfile.bio}</p>
+        <section className="actor-performance-focus" aria-label="Performance focus">
+          <p>Performance Focus</p>
+          <ul>
+            {actorProfile.performanceFocus.map((focus) => (
+              <li key={focus}>{focus}</li>
+            ))}
+          </ul>
+        </section>
+      </article>
     </div>
   );
 }

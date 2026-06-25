@@ -742,54 +742,158 @@ body {
   padding: 0 !important;
 }
 
-.actor-profile--cinema {
+.actor-profile--festival {
+  position: relative !important;
   min-height: 100svh !important;
   display: grid !important;
-  grid-template-columns: 47vw 1fr !important;
-  gap: 0 !important;
-  align-items: stretch !important;
+  grid-template-columns: minmax(30rem, 46vw) minmax(0, 1fr) !important;
+  gap: clamp(2rem, 4.5vw, 6rem) !important;
+  align-items: center !important;
+  overflow: hidden !important;
+  padding: clamp(4rem, 6vh, 5.4rem) clamp(3rem, 6vw, 7rem) clamp(3.2rem, 5vh, 4.5rem) !important;
+  background:
+    radial-gradient(circle at 19% 43%, rgba(116,134,148,0.18), transparent 25rem),
+    radial-gradient(circle at 82% 23%, rgba(214,161,106,0.08), transparent 21rem),
+    linear-gradient(115deg, #080a0c 0%, #10161b 43%, #050607 100%) !important;
+}
+
+.actor-profile--festival::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  background:
+    linear-gradient(90deg, rgba(239,234,224,0.055) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(239,234,224,0.045) 1px, transparent 1px) !important;
+  background-size: 25vw 33.333% !important;
+  opacity: 0.32 !important;
+}
+
+.actor-profile--festival::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: auto 5vw -24vh auto !important;
+  width: 42vw !important;
+  height: 42vw !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(239,234,224,0.08) !important;
+  background: radial-gradient(circle, rgba(239,234,224,0.045), transparent 64%) !important;
+  filter: blur(0.2px) !important;
+  pointer-events: none !important;
+}
+
+.actor-section-code {
+  position: absolute !important;
+  top: clamp(1.5rem, 3vh, 2.2rem) !important;
+  left: clamp(2rem, 4vw, 5rem) !important;
+  z-index: 3 !important;
+  margin: 0 !important;
+  font-family: "IBM Plex Mono", monospace !important;
+  font-size: 0.62rem !important;
+  letter-spacing: 0.36em !important;
+  text-transform: uppercase !important;
+  color: rgba(239,234,224,0.36) !important;
 }
 
 .actor-background-still {
-  opacity: 0.16 !important;
-  filter: saturate(0.9) brightness(1.05) !important;
+  inset: 0 !important;
+  opacity: 0.2 !important;
+  filter: saturate(0.68) brightness(0.92) contrast(1.08) !important;
+  mix-blend-mode: screen !important;
+}
+
+.actor-background-still::after {
+  background:
+    linear-gradient(90deg, rgba(5,6,7,0.84), rgba(5,6,7,0.34) 45%, rgba(5,6,7,0.88)),
+    radial-gradient(circle at 44% 40%, transparent, rgba(0,0,0,0.72) 78%) !important;
 }
 
 .actor-portrait-stage {
+  position: relative !important;
+  z-index: 2 !important;
   grid-column: 1 / 2 !important;
-  height: 100svh !important;
-  padding: clamp(5rem, 8vh, 7rem) clamp(3.5rem, 5vw, 6rem) clamp(4rem, 6vh, 5rem) !important;
-  display: grid;
-  align-content: center;
+  height: auto !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: grid !important;
+  align-content: center !important;
 }
 
-.actor-portrait-placeholder--cinema {
-  height: min(72vh, 46rem) !important;
-  border-radius: 0 !important;
-  border: 1px solid rgba(239,234,224,0.16) !important;
+.actor-portrait-frame {
+  position: relative !important;
+  width: 100% !important;
+  height: min(70svh, 44rem) !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  border-radius: clamp(1.6rem, 3vw, 3.4rem) !important;
+  border: 1px solid rgba(239,234,224,0.18) !important;
+  background: #111 !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.16),
+    0 58px 150px rgba(0,0,0,0.52) !important;
+  clip-path: polygon(0 0, 94% 0, 100% 88%, 88% 100%, 0 100%) !important;
+}
+
+.actor-portrait-frame::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 2 !important;
   background:
-    radial-gradient(circle at 54% 34%, rgba(255,255,255,0.19), transparent 10rem),
-    linear-gradient(145deg, rgba(143,164,179,0.17), rgba(255,255,255,0.02) 44%, rgba(0,0,0,0.28)) !important;
-  clip-path: polygon(0 0, 94% 0, 100% 100%, 0 100%) !important;
+    radial-gradient(circle at 58% 23%, rgba(255,255,255,0.16), transparent 14rem),
+    linear-gradient(180deg, transparent 54%, rgba(0,0,0,0.22)) !important;
+  pointer-events: none !important;
+}
+
+.actor-portrait-frame::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 1.1rem !important;
+  z-index: 3 !important;
+  border: 1px solid rgba(255,255,255,0.14) !important;
+  border-radius: clamp(1rem, 2vw, 2.5rem) !important;
+  background: transparent !important;
+  pointer-events: none !important;
+}
+
+.actor-portrait-frame img {
+  object-position: center 42% !important;
+  filter: saturate(0.86) contrast(1.02) brightness(1.02) !important;
+  transform: scale(1.015) !important;
 }
 
 .actor-stage-note {
-  position: static !important;
-  margin: 1.4rem 0 0 !important;
-  max-width: 26rem !important;
-  font-family: "Space Grotesk", system-ui, sans-serif !important;
-  font-style: normal !important;
-  font-size: clamp(2rem, 3.1vw, 3.8rem) !important;
-  line-height: 0.96 !important;
-  letter-spacing: -0.06em !important;
-  color: var(--poster-ink) !important;
+  position: absolute !important;
+  z-index: 4 !important;
+  top: auto !important;
+  left: clamp(1.5rem, 3vw, 2.5rem) !important;
+  bottom: clamp(1.5rem, 3vh, 2.4rem) !important;
+  margin: 0 !important;
+  width: auto !important;
+  max-width: 22rem !important;
+  padding: 0.9rem 1.05rem !important;
+  border: 1px solid rgba(239,234,224,0.13) !important;
+  border-radius: 1.25rem !important;
+  background: rgba(8,10,12,0.28) !important;
+  backdrop-filter: blur(20px) saturate(1.12) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(1.12) !important;
+  font-family: "Instrument Serif", Georgia, serif !important;
+  font-style: italic !important;
+  font-size: clamp(1.18rem, 1.55vw, 1.9rem) !important;
+  line-height: 0.98 !important;
+  letter-spacing: -0.035em !important;
+  color: rgba(239,234,224,0.86) !important;
 }
 
-.actor-copy--dossier {
+.actor-editorial-copy {
+  position: relative !important;
+  z-index: 2 !important;
   grid-column: 2 / 3 !important;
   align-self: center !important;
   margin: 0 !important;
-  padding: clamp(4rem, 7vh, 6rem) clamp(4.5rem, 7vw, 8rem) clamp(3rem, 5vh, 4rem) clamp(3rem, 5vw, 5rem) !important;
+  padding: clamp(1rem, 3vh, 2rem) 0 0 !important;
+  max-width: 52rem !important;
   border: 0 !important;
   background: transparent !important;
   border-radius: 0 !important;
@@ -817,75 +921,138 @@ body {
 }
 
 .actor-copy--dossier h2 {
-  max-width: 44rem !important;
-  margin: 0 0 clamp(1.1rem, 2vh, 1.6rem) !important;
+  max-width: 9ch !important;
+  margin: 0 0 clamp(1.05rem, 2vh, 1.55rem) !important;
   font-family: "Space Grotesk", system-ui, sans-serif !important;
   font-style: normal !important;
-  font-size: clamp(4.8rem, 8.4vw, 9.7rem) !important;
+  font-size: clamp(4.8rem, 8.25vw, 8.9rem) !important;
   font-weight: 700 !important;
-  line-height: 0.84 !important;
-  letter-spacing: -0.085em !important;
+  line-height: 0.8 !important;
+  letter-spacing: -0.092em !important;
+  color: var(--poster-ink) !important;
 }
 
 .actor-kicker,
 .actor-casting-line span,
-.actor-text-grid b,
-.actor-placeholder-note {
+.actor-meta-glass span,
+.actor-performance-focus p {
   font-family: "IBM Plex Mono", monospace !important;
   letter-spacing: 0.28em !important;
   text-transform: uppercase !important;
 }
 
+.actor-kicker {
+  margin: 0 0 clamp(0.9rem, 1.8vh, 1.35rem) !important;
+  font-size: 0.7rem !important;
+  color: rgba(214,161,106,0.88) !important;
+}
+
 .actor-casting-line {
-  display: grid;
-  grid-template-columns: 8rem 1fr;
-  gap: 1rem;
-  max-width: 35rem;
-  margin: 0 0 clamp(1.2rem, 2.4vh, 2rem) !important;
-  padding: 1rem 0;
-  border-top: 1px solid rgba(239,234,224,0.17);
-  border-bottom: 1px solid rgba(239,234,224,0.17);
+  display: grid !important;
+  grid-template-columns: 7rem 1fr !important;
+  gap: 1.2rem !important;
+  max-width: 38rem !important;
+  margin: 0 0 clamp(0.9rem, 1.8vh, 1.3rem) !important;
+  padding: 0.85rem 0 !important;
+  border-top: 1px solid rgba(239,234,224,0.18) !important;
+  border-bottom: 1px solid rgba(239,234,224,0.18) !important;
+}
+
+.actor-casting-line span,
+.actor-meta-glass span,
+.actor-performance-focus p {
+  font-size: 0.62rem !important;
+  color: rgba(239,234,224,0.44) !important;
 }
 
 .actor-casting-line b {
-  font-size: clamp(1.45rem, 2vw, 2.3rem) !important;
+  font-family: "Space Grotesk", system-ui, sans-serif !important;
+  font-size: clamp(1.5rem, 2.1vw, 2.25rem) !important;
+  line-height: 1.02 !important;
+  color: rgba(239,234,224,0.9) !important;
 }
 
-.actor-character-description {
-  max-width: 39rem !important;
-  font-size: clamp(1.05rem, 1.35vw, 1.42rem) !important;
-  line-height: 1.56 !important;
-  color: rgba(239,234,224,0.76) !important;
+.actor-meta-glass {
+  width: min(100%, 38rem) !important;
+  margin: 0 0 clamp(1rem, 2vh, 1.45rem) !important;
+  border-radius: 999px !important;
+  overflow: hidden !important;
 }
 
-.actor-text-grid {
-  max-width: 44rem !important;
+.actor-meta-glass .liquid-glass__inner {
   display: grid !important;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.85fr 1.15fr !important;
   gap: 1px !important;
-  margin-top: clamp(1.4rem, 3vh, 2.3rem) !important;
-  border: 1px solid rgba(239,234,224,0.14);
-  background: rgba(239,234,224,0.14);
+  padding: 0 !important;
+  background: rgba(255,255,255,0.045) !important;
 }
 
-.actor-text-grid p {
+.actor-meta-glass .liquid-glass__inner > div {
+  padding: 0.78rem 1.18rem !important;
+  background: rgba(6,8,10,0.34) !important;
+}
+
+.actor-meta-glass strong {
+  display: block !important;
+  margin-top: 0.36rem !important;
+  font-family: "Space Grotesk", system-ui, sans-serif !important;
+  font-size: clamp(1rem, 1.18vw, 1.25rem) !important;
+  line-height: 1.15 !important;
+  font-weight: 500 !important;
+  color: rgba(239,234,224,0.84) !important;
+}
+
+.actor-bio-editorial {
+  max-width: 40rem !important;
+  margin: 0 0 clamp(1rem, 2.1vh, 1.55rem) !important;
+  font-family: "Space Grotesk", system-ui, sans-serif !important;
+  font-size: clamp(1rem, 1.12vw, 1.18rem) !important;
+  line-height: 1.52 !important;
+  letter-spacing: -0.012em !important;
+  color: rgba(239,234,224,0.72) !important;
+}
+
+.actor-performance-focus {
+  width: min(100%, 42rem) !important;
+  display: grid !important;
+  grid-template-columns: 10.5rem 1fr !important;
+  gap: clamp(1rem, 2vw, 2rem) !important;
+  align-items: start !important;
+  padding-top: clamp(0.9rem, 1.7vh, 1.25rem) !important;
+  border-top: 1px solid rgba(239,234,224,0.14) !important;
+}
+
+.actor-performance-focus p {
   margin: 0 !important;
-  padding: 1.2rem !important;
-  background: rgba(255,255,255,0.025);
-  color: rgba(239,234,224,0.62) !important;
+  line-height: 1.6 !important;
 }
 
-.actor-placeholder-note {
-  max-width: 42rem !important;
-  margin-top: 1rem !important;
-  font-size: 0.58rem !important;
-  line-height: 1.6 !important;
-  color: rgba(239,234,224,0.34) !important;
+.actor-performance-focus ul {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 0.7rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.actor-performance-focus li {
+  padding: 0.66rem 0.8rem !important;
+  border: 1px solid rgba(239,234,224,0.13) !important;
+  border-radius: 999px !important;
+  background:
+    radial-gradient(circle at 28% 20%, rgba(255,255,255,0.08), transparent 42%),
+    rgba(255,255,255,0.028) !important;
+  font-family: "Space Grotesk", system-ui, sans-serif !important;
+  font-size: 0.86rem !important;
+  line-height: 1 !important;
+  color: rgba(239,234,224,0.78) !important;
 }
 
 .actor-copy--dossier .vertical-meta {
-  right: 0 !important;
-  color: rgba(239,234,224,0.28) !important;
+  right: -2.2rem !important;
+  top: 0.35rem !important;
+  color: rgba(239,234,224,0.26) !important;
 }
 
 /* Production + closing */
