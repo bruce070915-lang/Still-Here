@@ -4168,3 +4168,369 @@ html[data-cinematic-look="a-ghost-story"] .section-shell {
   grid-column: 2 / 3 !important;
   grid-row: 8 / 9 !important;
 }
+
+/* --------------------------------------------------------------------------
+   Design QA polish phase: refinement only, no new visual concepts.
+   One focal point per section, quieter support elements, tighter grid.
+   -------------------------------------------------------------------------- */
+
+.floating-nav.scene-index {
+  width: min(1360px, calc(100vw - 8rem)) !important;
+  grid-template-columns: 8.8rem minmax(0, 1fr) 12rem !important;
+  gap: 0.62rem !important;
+  opacity: 0.66 !important;
+  min-height: 3.35rem !important;
+  backdrop-filter: blur(18px) saturate(1.08) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(1.08) !important;
+}
+
+.floating-nav.scene-index:hover {
+  opacity: 0.9 !important;
+}
+
+.nav-items {
+  gap: 0.36rem !important;
+}
+
+.nav-items button {
+  height: 2.32rem !important;
+  padding: 0.32rem 0.32rem 0.26rem !important;
+}
+
+.nav-items button span {
+  font-size: 0.44rem !important;
+  letter-spacing: 0.1em !important;
+}
+
+.nav-items button i {
+  font-size: clamp(0.46rem, 0.5vw, 0.56rem) !important;
+  letter-spacing: 0.015em !important;
+}
+
+.nav-current {
+  height: 2.32rem !important;
+  padding-inline: 0.82rem !important;
+}
+
+.nav-current b {
+  font-size: 0.62rem !important;
+}
+
+.section-eyebrow {
+  max-width: 16rem !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  opacity: 0.52 !important;
+}
+
+.liquid-glass::before {
+  opacity: 0.22 !important;
+}
+
+.liquid-glass {
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.14),
+    inset 0 -14px 30px rgba(0,0,0,0.16),
+    0 20px 60px rgba(0,0,0,0.22) !important;
+}
+
+.opening-section .hero-reality {
+  filter: saturate(0.68) brightness(0.74) contrast(1.16) !important;
+}
+
+.hero-statement {
+  left: clamp(3rem, 5vw, 5.5rem) !important;
+  top: clamp(8.4rem, 14vh, 11rem) !important;
+  width: min(38rem, 40vw) !important;
+}
+
+.hero-statement span {
+  font-size: clamp(6.8rem, 11.4vw, 13.2rem) !important;
+  line-height: 0.77 !important;
+  letter-spacing: -0.075em !important;
+}
+
+.hero-statement span:nth-child(2) {
+  margin-left: clamp(4.5rem, 8vw, 8rem) !important;
+}
+
+.hero-return-note,
+.hero-door-slit,
+.opening-section .opening-logline,
+.opening-section .microcopy {
+  opacity: 0.28 !important;
+}
+
+.logline-section .editorial-grid {
+  width: min(1580px, calc(100vw - 14rem)) !important;
+  margin-inline: auto !important;
+  grid-template-columns: minmax(0, 0.94fr) minmax(24rem, 0.72fr) !important;
+}
+
+.logline-section .logline-big {
+  max-width: 52rem !important;
+  font-size: clamp(2.25rem, 3vw, 3.8rem) !important;
+  line-height: 1.07 !important;
+}
+
+.logline-visual-column .logline-still-stack {
+  opacity: 0.66 !important;
+}
+
+.logline-visual-column .note-glass {
+  opacity: 0.62 !important;
+  transform: rotate(-1deg) !important;
+}
+
+.story-intro {
+  min-height: 100svh !important;
+  width: min(1580px, calc(100vw - 14rem)) !important;
+  margin-inline: auto !important;
+  padding: clamp(6rem, 10vh, 8rem) 0 clamp(4rem, 7vh, 6rem) !important;
+  display: grid !important;
+  grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+  align-items: center !important;
+  justify-items: stretch !important;
+  gap: clamp(1.5rem, 2.2vw, 2.5rem) !important;
+}
+
+.story-intro h2 {
+  grid-column: 1 / 9 !important;
+  width: auto !important;
+  max-width: none !important;
+  font-size: clamp(4.8rem, 7.4vw, 9rem) !important;
+  line-height: 0.88 !important;
+  letter-spacing: -0.068em !important;
+}
+
+.story-intro p {
+  grid-column: 10 / 13 !important;
+  width: auto !important;
+  max-width: 27rem !important;
+  margin: 0 !important;
+  justify-self: end !important;
+  font-size: clamp(0.98rem, 1.04vw, 1.12rem) !important;
+  line-height: 1.64 !important;
+  color: rgba(239,234,224,0.62) !important;
+}
+
+.chapter-title-field span {
+  opacity: 0.54 !important;
+}
+
+.chapter-object-echo {
+  opacity: 0.26 !important;
+}
+
+.story-chapter .chapter-copy p {
+  color: rgba(239,234,224,0.68) !important;
+}
+
+.object-cloud {
+  width: min(1580px, calc(100vw - 14rem)) !important;
+  margin-inline: auto !important;
+}
+
+.reappear-object {
+  min-height: min(22vh, 13rem) !important;
+  padding: clamp(0.9rem, 1.15vw, 1.2rem) !important;
+}
+
+.reappear-object h3 {
+  font-size: clamp(1.3rem, 1.9vw, 2.15rem) !important;
+  line-height: 1.03 !important;
+}
+
+.nonsync-section .split-heading h2 {
+  max-width: 55rem !important;
+  font-size: clamp(3rem, 5.2vw, 6.15rem) !important;
+}
+
+.sound-track {
+  opacity: 0.88 !important;
+}
+
+.visual-mood-section .mood-heading h2,
+.visual-language-section > h2 {
+  font-size: clamp(3.75rem, 6.25vw, 7.6rem) !important;
+  line-height: 0.91 !important;
+}
+
+.visual-mood-section .mood-frame--bag {
+  opacity: 0.42 !important;
+}
+
+.visual-mood-section .mood-frame--hero {
+  opacity: 0.28 !important;
+}
+
+.visual-mood-section .mood-frame--note,
+.visual-mood-section .mood-frame--frame {
+  opacity: 0.16 !important;
+}
+
+.dna-section .film-card:not(:first-child) {
+  opacity: 0.32 !important;
+}
+
+.dna-section .film-card:nth-child(1) {
+  opacity: 0.88 !important;
+}
+
+.visual-language-section .language-grid {
+  left: 49vw !important;
+  right: clamp(5rem, 6vw, 7rem) !important;
+  gap: clamp(0.55rem, 0.75vw, 0.75rem) !important;
+}
+
+.visual-language-section .language-panel {
+  background: rgba(5,7,8,0.38) !important;
+  border-color: rgba(239,234,224,0.085) !important;
+  backdrop-filter: blur(10px) saturate(1.02) !important;
+  -webkit-backdrop-filter: blur(10px) saturate(1.02) !important;
+}
+
+.visual-language-section .language-panel h3 {
+  font-size: clamp(1.3rem, 1.55vw, 1.8rem) !important;
+}
+
+.visual-language-section .language-panel p {
+  font-size: clamp(0.78rem, 0.84vw, 0.9rem) !important;
+  line-height: 1.45 !important;
+}
+
+.director-profile {
+  grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+  background:
+    radial-gradient(circle at 10% 45%, rgba(214,161,106,0.055), transparent 21rem),
+    #050607 !important;
+}
+
+.director-photo {
+  left: 0 !important;
+  right: auto !important;
+  width: min(31vw, 38rem) !important;
+  height: 100svh !important;
+  clip-path: polygon(0 0, 82% 0, 100% 100%, 0 100%) !important;
+  opacity: 0.36 !important;
+}
+
+.director-photo img {
+  object-position: 44% center !important;
+  filter: saturate(0.76) brightness(0.72) contrast(1.08) !important;
+}
+
+.director-copy {
+  grid-column: 2 / 8 !important;
+  padding-left: clamp(5rem, 7vw, 8rem) !important;
+  max-width: 47rem !important;
+}
+
+.director-copy h2 {
+  font-size: clamp(4.7rem, 7.4vw, 8.3rem) !important;
+  line-height: 0.9 !important;
+  margin-bottom: clamp(1.1rem, 2vh, 1.55rem) !important;
+}
+
+.director-label {
+  width: min(34rem, 36vw) !important;
+  opacity: 0.48 !important;
+  padding: 0.85rem 1rem !important;
+}
+
+.director-copy .bio {
+  max-width: 39rem !important;
+  font-size: clamp(0.96rem, 1.04vw, 1.1rem) !important;
+  line-height: 1.62 !important;
+  color: rgba(239,234,224,0.66) !important;
+}
+
+.director-copy blockquote {
+  max-width: 34rem !important;
+  font-size: clamp(1.5rem, 2vw, 2.2rem) !important;
+  line-height: 1.1 !important;
+  color: rgba(239,234,224,0.84) !important;
+}
+
+.actor-profile--festival {
+  grid-template-columns: minmax(28rem, 48vw) minmax(0, 0.86fr) !important;
+  gap: clamp(2.5rem, 5vw, 6rem) !important;
+  padding-inline: clamp(4.5rem, 6vw, 7rem) !important;
+}
+
+.actor-portrait-frame {
+  height: min(68svh, 42rem) !important;
+  filter: saturate(0.95) brightness(0.92) !important;
+}
+
+.actor-stage-note {
+  opacity: 0.62 !important;
+  max-width: 18rem !important;
+  font-size: clamp(1rem, 1.22vw, 1.45rem) !important;
+  backdrop-filter: blur(12px) saturate(1.02) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(1.02) !important;
+}
+
+.actor-copy--dossier h2 {
+  font-size: clamp(3.45rem, 5.25vw, 6.25rem) !important;
+  line-height: 0.88 !important;
+  letter-spacing: -0.075em !important;
+  max-width: 8ch !important;
+}
+
+.actor-kicker {
+  opacity: 0.74 !important;
+}
+
+.actor-casting-line,
+.actor-meta-glass,
+.actor-performance-focus {
+  width: min(100%, 35rem) !important;
+}
+
+.actor-meta-glass {
+  opacity: 0.72 !important;
+}
+
+.actor-bio-editorial {
+  max-width: 36rem !important;
+  font-size: clamp(0.94rem, 1vw, 1.06rem) !important;
+  line-height: 1.55 !important;
+}
+
+.actor-performance-focus li {
+  background: rgba(255,255,255,0.018) !important;
+  border-color: rgba(239,234,224,0.11) !important;
+  color: rgba(239,234,224,0.68) !important;
+  padding: 0.56rem 0.64rem !important;
+  font-size: clamp(0.7rem, 0.74vw, 0.82rem) !important;
+  line-height: 1.08 !important;
+}
+
+.production-file {
+  width: min(1020px, 70vw) !important;
+  min-height: 59vh !important;
+}
+
+.production-file div {
+  background: rgba(5,7,8,0.58) !important;
+}
+
+.closing-section::before,
+.closing-note-ghost,
+.closing-bag-shadow {
+  opacity: 0.045 !important;
+}
+
+.closing-final-card {
+  transform: translateY(1.2vh) !important;
+}
+
+.closing-final-card h2 {
+  font-size: clamp(4.2rem, 6.8vw, 8.2rem) !important;
+  opacity: 0.92 !important;
+}
+
+.closing-final-thesis span {
+  font-size: clamp(1.85rem, 2.55vw, 3.1rem) !important;
+}
