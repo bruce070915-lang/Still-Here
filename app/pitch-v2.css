@@ -3359,3 +3359,812 @@ html[data-cinematic-look="a-ghost-story"] .section-shell {
   font-size: clamp(0.84rem, 0.92vw, 0.98rem) !important;
   line-height: 1.42 !important;
 }
+
+/* --------------------------------------------------------------------------
+   Hierarchy edit: controlled chaos. One primary visual decision per screen.
+   -------------------------------------------------------------------------- */
+
+.memory-invasion {
+  z-index: 62 !important;
+}
+
+.memory-fragment {
+  opacity: clamp(0, calc((var(--memory-chaos) - 0.42) * 0.95), 0.28) !important;
+  filter: saturate(0.6) contrast(1.05) brightness(0.58) !important;
+  box-shadow: 0 28px 70px rgba(0,0,0,0.34) !important;
+}
+
+.memory-fragment span {
+  opacity: 0.56 !important;
+}
+
+.memory-fragment--note {
+  opacity: clamp(0, calc((var(--memory-chaos) - 0.46) * 0.78), 0.22) !important;
+}
+
+.memory-fragment--photo-a,
+.memory-fragment--photo-b {
+  opacity: clamp(0, calc((var(--memory-chaos) - 0.55) * 0.82), 0.24) !important;
+}
+
+.memory-fragment--bag {
+  opacity: clamp(0, calc((var(--memory-chaos) - 0.7) * 0.82), 0.26) !important;
+}
+
+.bag-wipe {
+  opacity: 0 !important;
+}
+
+.nav-invasion {
+  opacity: clamp(0, calc((var(--memory-chaos) - 0.82) * 1.35), 0.34) !important;
+}
+
+.nav-invasion--note {
+  padding: 0.32rem 0.52rem !important;
+  font-size: 0.82rem !important;
+}
+
+.nav-invasion--photo {
+  width: 2.6rem !important;
+  height: 1.65rem !important;
+}
+
+.nav-invasion--bag {
+  width: 1.1rem !important;
+  height: 1.1rem !important;
+}
+
+.opening-section .hero-reality {
+  filter: saturate(0.72) brightness(0.78) contrast(1.18) !important;
+}
+
+.opening-section .hero-memory-lens {
+  opacity: 0.11 !important;
+  filter: blur(1.4px) saturate(0.52) brightness(0.7) url(#liquid-distortion) !important;
+}
+
+.opening-section .kinetic-title {
+  display: none !important;
+}
+
+.hero-statement {
+  left: clamp(1.2rem, 2.5vw, 3rem) !important;
+  top: clamp(7.6rem, 13vh, 10rem) !important;
+  bottom: auto !important;
+  clip-path: inset(0 0 0 0) !important;
+  filter: blur(0px) !important;
+}
+
+.hero-statement span {
+  font-size: clamp(7.8rem, 14.6vw, 17.2rem) !important;
+  line-height: 0.72 !important;
+  color: rgba(239,234,224,0.86) !important;
+}
+
+.hero-statement span:nth-child(2) {
+  margin-left: clamp(4rem, 12vw, 14rem) !important;
+}
+
+.hero-return-note {
+  right: clamp(4rem, 6vw, 7rem) !important;
+  bottom: clamp(8rem, 14vh, 12rem) !important;
+  width: min(17rem, 18vw) !important;
+  padding: 0.72rem 0.88rem !important;
+  font-size: clamp(0.92rem, 1.1vw, 1.18rem) !important;
+  opacity: 0.34 !important;
+}
+
+.hero-door-slit {
+  opacity: 0.3 !important;
+}
+
+.opening-section .opening-logline {
+  opacity: 0.76 !important;
+  background: rgba(0,0,0,0.18) !important;
+}
+
+.chapter-title-field span {
+  color: rgba(239,234,224,0.055) !important;
+}
+
+.chapter-object-echo {
+  opacity: 0.48 !important;
+  font-size: 0.48rem !important;
+  letter-spacing: 0.28em !important;
+}
+
+.story-chapter .chapter-copy {
+  background: rgba(2,3,3,0.18) !important;
+}
+
+.story-chapter .chapter-copy h3 {
+  text-shadow: 0 24px 70px rgba(0,0,0,0.55) !important;
+}
+
+.story-chapter[data-chapter="return"] .chapter-title-field span {
+  color: rgba(239,234,224,0.038) !important;
+}
+
+.story-chapter[data-chapter="disposal"] .chapter-title-field span {
+  color: rgba(239,234,224,0.04) !important;
+}
+
+.story-chapter[data-chapter="disposal"] .chapter-media {
+  opacity: 0.74 !important;
+  filter: saturate(0.8) brightness(0.76) contrast(1.08) !important;
+}
+
+.story-chapter[data-chapter="disposal"]::after {
+  opacity: 0.62 !important;
+}
+
+.story-chapter[data-chapter="disposal"] .chapter-copy {
+  background: transparent !important;
+}
+
+.story-chapter[data-chapter="reappearance"] .chapter-title-field span {
+  color: rgba(239,234,224,0.075) !important;
+}
+
+.story-chapter[data-chapter="reappearance"] .chapter-media {
+  opacity: 0.82 !important;
+}
+
+.story-chapter[data-chapter="accumulation"]::after {
+  opacity: 0.24 !important;
+}
+
+.story-chapter[data-chapter="accumulation"] .chapter-title-field span {
+  color: rgba(239,234,224,0.055) !important;
+}
+
+.story-chapter[data-chapter="accumulation"] .chapter-media {
+  opacity: 0.42 !important;
+}
+
+.story-chapter[data-chapter="accumulation"] .chapter-copy h3 {
+  font-size: clamp(2.7rem, 4.3vw, 5.05rem) !important;
+  line-height: 0.98 !important;
+}
+
+.story-chapter[data-chapter="confrontation"] .chapter-title-field span {
+  color: rgba(239,234,224,0.06) !important;
+}
+
+.story-chapter[data-chapter="confrontation"] .chapter-copy {
+  background: rgba(2,3,3,0.54) !important;
+}
+
+.story-chapter[data-chapter="door-opens"] .chapter-title-field span {
+  color: rgba(239,234,224,0.05) !important;
+}
+
+.dna-section .dna-heading {
+  width: min(35rem, 34vw) !important;
+}
+
+.dna-section .dna-heading h2 {
+  max-width: min(35rem, 34vw) !important;
+  font-size: clamp(3rem, 5.05vw, 6.2rem) !important;
+  line-height: 0.9 !important;
+  letter-spacing: -0.055em !important;
+}
+
+.dna-section .dna-note {
+  max-width: min(24rem, 28vw) !important;
+  opacity: 0.66 !important;
+}
+
+.theme-indicator,
+.restore-look-button {
+  opacity: 0.72 !important;
+}
+
+.reference-universe {
+  width: min(24rem, 28vw) !important;
+  opacity: 0.64 !important;
+}
+
+.reference-universe b {
+  font-size: clamp(1.05rem, 1.45vw, 1.65rem) !important;
+}
+
+.reference-universe p {
+  font-size: 0.84rem !important;
+}
+
+.dna-section .film-reference-grid {
+  right: clamp(4rem, 5vw, 6rem) !important;
+  width: min(57vw, 72rem) !important;
+  transform: rotate(-0.55deg) !important;
+}
+
+.dna-section .film-card {
+  filter: saturate(0.88) brightness(0.86) !important;
+}
+
+.dna-section .film-card:hover,
+.dna-section .film-card[data-active="true"] {
+  filter: saturate(1.08) brightness(1.02) !important;
+}
+
+.dna-section--active-look::after {
+  opacity: 0.52 !important;
+}
+
+.reference-modal-backdrop {
+  background:
+    radial-gradient(circle at 50% 45%, color-mix(in srgb, var(--look-b) 14%, transparent), transparent 34rem),
+    rgba(0,0,0,0.78) !important;
+}
+
+.reference-modal {
+  box-shadow: 0 50px 160px rgba(0,0,0,0.72) !important;
+}
+
+.closing-section::before {
+  opacity: clamp(0.12, calc(var(--memory-chaos) * 0.28), 0.28) !important;
+  filter: saturate(0.45) brightness(0.38) !important;
+}
+
+.closing-note-ghost {
+  opacity: 0.42 !important;
+}
+
+.closing-final-card {
+  background: radial-gradient(circle at 50% 42%, rgba(0,0,0,0.38), transparent 36rem) !important;
+}
+
+.closing-final-card h2 {
+  filter: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   Final hierarchy pass: edit the design down to one dominant read per scene.
+   -------------------------------------------------------------------------- */
+
+.memory-invasion {
+  z-index: 12 !important;
+  opacity: 0.58 !important;
+}
+
+.memory-fragment {
+  opacity: clamp(0, calc((var(--memory-chaos) - 0.58) * 0.42), 0.14) !important;
+  filter: saturate(0.48) contrast(1.04) brightness(0.42) blur(0.2px) !important;
+}
+
+.memory-fragment span {
+  opacity: 0.32 !important;
+}
+
+.memory-fragment--note,
+.memory-fragment--photo-a,
+.memory-fragment--photo-b,
+.memory-fragment--bag {
+  opacity: clamp(0, calc((var(--memory-chaos) - 0.66) * 0.34), 0.12) !important;
+}
+
+.nav-invasion {
+  opacity: clamp(0, calc((var(--memory-chaos) - 0.9) * 0.55), 0.16) !important;
+}
+
+.story-chapter .chapter-title-field span {
+  opacity: 0.72 !important;
+}
+
+.story-chapter[data-chapter="accumulation"]::after {
+  inset: 16vh 6vw 8vh 47vw !important;
+  opacity: 0.16 !important;
+  filter: saturate(0.52) brightness(0.54) blur(0.2px) !important;
+}
+
+.story-chapter[data-chapter="accumulation"] .chapter-title-field span {
+  top: 12.5vh !important;
+  font-size: clamp(4.4rem, 8.4vw, 10.2rem) !important;
+  color: rgba(239,234,224,0.032) !important;
+}
+
+.story-chapter[data-chapter="accumulation"] .chapter-copy {
+  max-width: min(39vw, 670px) !important;
+  background: linear-gradient(90deg, rgba(3,4,4,0.68), rgba(3,4,4,0.18), transparent) !important;
+}
+
+.story-chapter[data-chapter="accumulation"] .chapter-copy h3 {
+  font-size: clamp(3.05rem, 4.75vw, 5.6rem) !important;
+  line-height: 0.94 !important;
+  letter-spacing: -0.041em !important;
+}
+
+.story-chapter[data-chapter="confrontation"] {
+  display: block !important;
+  padding: 0 !important;
+  background: #020303 !important;
+}
+
+.story-chapter[data-chapter="confrontation"] .chapter-media {
+  position: absolute !important;
+  inset: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  max-width: none !important;
+  opacity: 0.82 !important;
+  filter: saturate(0.9) brightness(0.92) contrast(1.12) !important;
+}
+
+.story-chapter[data-chapter="confrontation"] .chapter-media img {
+  object-position: 52% 54% !important;
+  transform: scale(1.06) !important;
+  filter: saturate(0.94) brightness(1.04) contrast(1.12) !important;
+}
+
+.story-chapter[data-chapter="confrontation"] .chapter-media__veil {
+  background:
+    radial-gradient(circle at 48% 48%, transparent 0, rgba(0,0,0,0.08) 27%, rgba(0,0,0,0.68) 78%),
+    linear-gradient(90deg, rgba(0,0,0,0.72), rgba(0,0,0,0.18) 43%, rgba(0,0,0,0.82)) !important;
+}
+
+.story-chapter[data-chapter="confrontation"] .chapter-copy {
+  position: absolute !important;
+  left: clamp(5rem, 7.5vw, 9rem) !important;
+  bottom: clamp(4.8rem, 8.2vh, 7rem) !important;
+  width: min(34rem, 34vw) !important;
+  max-width: min(34rem, 34vw) !important;
+  padding: clamp(1.25rem, 1.8vw, 1.75rem) !important;
+  background: rgba(2,3,3,0.58) !important;
+  border: 1px solid rgba(239,234,224,0.11) !important;
+  box-shadow: 0 44px 120px rgba(0,0,0,0.48) !important;
+  transform: none !important;
+  backdrop-filter: blur(18px) saturate(1.02) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(1.02) !important;
+}
+
+.story-chapter[data-chapter="confrontation"] .chapter-copy h3 {
+  font-size: clamp(2.5rem, 3.45vw, 4rem) !important;
+  line-height: 0.94 !important;
+  letter-spacing: -0.045em !important;
+}
+
+.story-chapter[data-chapter="confrontation"] .chapter-copy p {
+  font-size: clamp(0.92rem, 1vw, 1.04rem) !important;
+  line-height: 1.5 !important;
+  color: rgba(239,234,224,0.72) !important;
+}
+
+.story-chapter[data-chapter="confrontation"] .chapter-title-field span {
+  left: auto !important;
+  right: -6vw !important;
+  top: 12vh !important;
+  font-size: clamp(5rem, 9vw, 11rem) !important;
+  transform: none !important;
+  color: rgba(239,234,224,0.028) !important;
+}
+
+.story-chapter[data-chapter="confrontation"] .chapter-object-echo {
+  right: clamp(4rem, 7vw, 8rem) !important;
+  bottom: clamp(4rem, 7vh, 6rem) !important;
+  opacity: 0.22 !important;
+}
+
+.dna-section {
+  background:
+    radial-gradient(circle at 73% 43%, color-mix(in srgb, var(--look-b) 18%, transparent), transparent 27rem),
+    radial-gradient(circle at 22% 76%, color-mix(in srgb, var(--look-a) 8%, transparent), transparent 22rem),
+    #030405 !important;
+}
+
+.dna-section .dna-heading {
+  width: min(32rem, 31vw) !important;
+}
+
+.dna-section .dna-heading h2 {
+  max-width: min(32rem, 31vw) !important;
+  font-size: clamp(2.85rem, 4.65vw, 5.45rem) !important;
+  line-height: 0.91 !important;
+}
+
+.dna-section .dna-note {
+  max-width: min(23rem, 26vw) !important;
+  font-size: 0.96rem !important;
+  line-height: 1.48 !important;
+}
+
+.reference-universe {
+  width: min(21rem, 23vw) !important;
+  opacity: 0.54 !important;
+}
+
+.theme-indicator,
+.restore-look-button {
+  opacity: 0.56 !important;
+}
+
+.dna-section .film-reference-grid {
+  inset: 12vh clamp(5rem, 6vw, 7rem) 11vh 43vw !important;
+  width: auto !important;
+  display: grid !important;
+  grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+  grid-template-rows: repeat(8, minmax(0, 1fr)) !important;
+  gap: clamp(0.7rem, 0.9vw, 1rem) !important;
+  transform: none !important;
+}
+
+.dna-section .film-card {
+  border-radius: clamp(0.9rem, 1.25vw, 1.4rem) !important;
+  opacity: 0.42 !important;
+  filter: saturate(0.52) brightness(0.54) !important;
+  transform: none !important;
+}
+
+.dna-section .film-card:nth-child(1) {
+  grid-column: 1 / 9 !important;
+  grid-row: 1 / 7 !important;
+  opacity: 0.96 !important;
+  filter: saturate(0.9) brightness(0.86) !important;
+  box-shadow: 0 52px 160px rgba(0,0,0,0.62) !important;
+}
+
+.dna-section .film-card:nth-child(2) {
+  grid-column: 9 / 13 !important;
+  grid-row: 1 / 3 !important;
+}
+
+.dna-section .film-card:nth-child(3) {
+  grid-column: 9 / 13 !important;
+  grid-row: 3 / 5 !important;
+}
+
+.dna-section .film-card:nth-child(4) {
+  grid-column: 9 / 13 !important;
+  grid-row: 5 / 7 !important;
+}
+
+.dna-section .film-card:nth-child(5) {
+  grid-column: 1 / 13 !important;
+  grid-row: 7 / 9 !important;
+}
+
+.dna-section .film-card:not(:first-child) .film-card__glass {
+  padding: 0.66rem !important;
+}
+
+.dna-section .film-card:not(:first-child) .film-card__glass h3 {
+  font-size: clamp(0.98rem, 1.28vw, 1.45rem) !important;
+  line-height: 1.02 !important;
+}
+
+.dna-section .film-card:not(:first-child) .film-card__glass p,
+.dna-section .film-card:not(:first-child) .film-card__top,
+.dna-section .film-card:not(:first-child) .color-strip {
+  display: none !important;
+}
+
+.dna-section .film-card:hover,
+.dna-section .film-card[data-active="true"] {
+  opacity: 1 !important;
+  filter: saturate(1.04) brightness(0.96) !important;
+}
+
+.dna-section .film-card[data-active="true"] {
+  grid-column: 1 / 9 !important;
+  grid-row: 1 / 7 !important;
+  z-index: 10 !important;
+  transform: scale(1.015) !important;
+}
+
+.dna-section--active-look .film-card:not([data-active="true"]) {
+  opacity: 0.24 !important;
+  filter: saturate(0.35) brightness(0.42) !important;
+}
+
+.dna-section--active-look::after {
+  opacity: 0.34 !important;
+}
+
+.closing-section::before {
+  opacity: 0.07 !important;
+  filter: saturate(0.24) brightness(0.24) blur(0.4px) !important;
+}
+
+.closing-note-ghost {
+  opacity: 0.08 !important;
+}
+
+.closing-final-card {
+  width: min(58rem, 62vw) !important;
+  margin: 0 auto !important;
+  background: radial-gradient(circle at 50% 48%, rgba(255,255,255,0.035), rgba(0,0,0,0) 33rem) !important;
+}
+
+.closing-final-card h2 {
+  font-size: clamp(4.6rem, 7.6vw, 9.4rem) !important;
+  line-height: 0.82 !important;
+  letter-spacing: -0.058em !important;
+}
+
+.closing-final-thesis {
+  margin-top: clamp(2.4rem, 5vh, 3.7rem) !important;
+  gap: 0.38rem !important;
+}
+
+.closing-final-thesis span {
+  font-size: clamp(2rem, 3vw, 3.65rem) !important;
+  line-height: 1.04 !important;
+}
+
+.logline-section .editorial-grid {
+  grid-template-columns: minmax(0, 0.92fr) minmax(24rem, 0.72fr) !important;
+  gap: clamp(3rem, 6vw, 6.5rem) !important;
+  padding-top: clamp(5.2rem, 8vh, 6.8rem) !important;
+}
+
+.logline-section .logline-big {
+  max-width: min(50rem, 48vw) !important;
+  font-size: clamp(2.18rem, 3.15vw, 3.95rem) !important;
+  line-height: 1.05 !important;
+  letter-spacing: -0.048em !important;
+}
+
+.logline-visual-column {
+  min-height: 62svh !important;
+  align-self: center !important;
+}
+
+.logline-visual-column .logline-still-stack {
+  width: min(36rem, 100%) !important;
+  height: min(42vh, 26rem) !important;
+  opacity: 0.78 !important;
+}
+
+.logline-visual-column .note-glass {
+  width: min(20rem, 72%) !important;
+  margin-left: clamp(1.2rem, 3vw, 3rem) !important;
+  padding: clamp(0.82rem, 1.2vw, 1.1rem) !important;
+  opacity: 0.74 !important;
+}
+
+.logline-visual-column .note-glass p {
+  font-size: clamp(1.12rem, 1.45vw, 1.7rem) !important;
+  line-height: 1.08 !important;
+}
+
+.visual-mood-section .mood-poster {
+  grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+  grid-template-rows: repeat(6, minmax(0, 1fr)) !important;
+}
+
+.visual-mood-section .mood-heading {
+  grid-column: 1 / 7 !important;
+  grid-row: 1 / 6 !important;
+  align-self: center !important;
+}
+
+.visual-mood-section .mood-heading h2 {
+  max-width: min(44rem, 42vw) !important;
+  font-size: clamp(4rem, 6.6vw, 8.1rem) !important;
+  line-height: 0.9 !important;
+}
+
+.visual-mood-section .mood-heading p {
+  max-width: min(24rem, 28vw) !important;
+  margin: clamp(1.6rem, 3vh, 2.2rem) 0 0 clamp(1rem, 4vw, 4rem) !important;
+  opacity: 0.58 !important;
+}
+
+.visual-mood-section .mood-frame {
+  filter: saturate(0.82) brightness(0.72) contrast(1.04) !important;
+}
+
+.visual-mood-section .mood-frame--bag {
+  grid-column: 9 / 13 !important;
+  grid-row: 1 / 7 !important;
+  opacity: 0.5 !important;
+}
+
+.visual-mood-section .mood-frame--hero {
+  grid-column: 1 / 6 !important;
+  grid-row: 5 / 7 !important;
+  opacity: 0.34 !important;
+}
+
+.visual-mood-section .mood-frame--note,
+.visual-mood-section .mood-frame--frame {
+  grid-column: 7 / 9 !important;
+  opacity: 0.22 !important;
+}
+
+.visual-mood-section .mood-texture-note {
+  grid-column: 6 / 9 !important;
+  grid-row: 3 / 5 !important;
+  align-self: center !important;
+  max-width: min(23rem, 25vw) !important;
+  opacity: 0.52 !important;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.production-section {
+  place-items: center !important;
+}
+
+.production-file {
+  width: min(1120px, 76vw) !important;
+  min-height: 58vh !important;
+  grid-template-columns: 1.1fr 1.1fr repeat(4, minmax(0, 0.82fr)) !important;
+  grid-template-rows: 1.18fr 0.88fr 0.76fr !important;
+  border-radius: 1.65rem !important;
+  transform: none !important;
+}
+
+.production-file div {
+  align-content: start !important;
+  gap: clamp(0.55rem, 1vh, 0.8rem) !important;
+  overflow: hidden !important;
+}
+
+.production-file div span {
+  display: block !important;
+  font-size: 0.56rem !important;
+  line-height: 1 !important;
+  letter-spacing: 0.34em !important;
+  color: rgba(239,234,224,0.38) !important;
+}
+
+.production-file div b {
+  display: block !important;
+  max-width: 100% !important;
+  font-size: clamp(1.08rem, 1.45vw, 1.85rem) !important;
+  line-height: 1.02 !important;
+  letter-spacing: -0.045em !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  color: rgba(239,234,224,0.86) !important;
+}
+
+.production-file div:nth-child(1) {
+  grid-column: 1 / 3 !important;
+  grid-row: 1 / 4 !important;
+  justify-content: start !important;
+  align-content: center !important;
+}
+
+.production-file div:nth-child(1) b {
+  font-size: clamp(4.4rem, 6.35vw, 7.2rem) !important;
+  line-height: 0.82 !important;
+  letter-spacing: -0.078em !important;
+}
+
+.production-file div:nth-child(2) {
+  grid-column: 5 / 6 !important;
+  grid-row: 2 / 3 !important;
+}
+
+.production-file div:nth-child(3) {
+  grid-column: 6 / 7 !important;
+  grid-row: 2 / 3 !important;
+}
+
+.production-file div:nth-child(4) {
+  grid-column: 3 / 7 !important;
+  grid-row: 1 / 2 !important;
+}
+
+.production-file div:nth-child(4) b,
+.production-file div:nth-child(5) b {
+  font-size: clamp(1.85rem, 2.55vw, 3.2rem) !important;
+  line-height: 0.96 !important;
+}
+
+.production-file div:nth-child(5) {
+  grid-column: 3 / 5 !important;
+  grid-row: 2 / 3 !important;
+}
+
+.production-file div:nth-child(6) {
+  grid-column: 3 / 4 !important;
+  grid-row: 3 / 4 !important;
+}
+
+.production-file div:nth-child(7) {
+  grid-column: 4 / 5 !important;
+  grid-row: 3 / 4 !important;
+}
+
+.production-file div:nth-child(8) {
+  grid-column: 5 / 6 !important;
+  grid-row: 3 / 4 !important;
+}
+
+.production-file div:nth-child(9) {
+  grid-column: 6 / 7 !important;
+  grid-row: 3 / 4 !important;
+}
+
+.production-file div:nth-child(2) b,
+.production-file div:nth-child(3) b,
+.production-file div:nth-child(6) b,
+.production-file div:nth-child(7) b,
+.production-file div:nth-child(8) b,
+.production-file div:nth-child(9) b {
+  font-size: clamp(0.95rem, 1.08vw, 1.3rem) !important;
+  line-height: 1.08 !important;
+  letter-spacing: -0.032em !important;
+}
+
+.production-file div:nth-child(6),
+.production-file div:nth-child(7),
+.production-file div:nth-child(8),
+.production-file div:nth-child(9) {
+  padding: clamp(0.82rem, 1.15vw, 1.05rem) !important;
+}
+
+.production-file {
+  width: min(1060px, 72vw) !important;
+  min-height: 62vh !important;
+  grid-template-columns: minmax(0, 1.08fr) minmax(26rem, 0.92fr) !important;
+  grid-template-rows: repeat(8, minmax(0, 1fr)) !important;
+}
+
+.production-file div {
+  display: grid !important;
+  grid-template-columns: minmax(6.5rem, 0.34fr) minmax(0, 1fr) !important;
+  align-items: center !important;
+  align-content: center !important;
+  padding: clamp(0.82rem, 1.25vw, 1.15rem) clamp(1.05rem, 1.7vw, 1.55rem) !important;
+}
+
+.production-file div:nth-child(1) {
+  grid-column: 1 / 2 !important;
+  grid-row: 1 / 9 !important;
+  grid-template-columns: 1fr !important;
+}
+
+.production-file div:nth-child(1) b {
+  font-size: clamp(4.6rem, 6.6vw, 7.8rem) !important;
+}
+
+.production-file div:not(:nth-child(1)) b {
+  font-size: clamp(1.12rem, 1.52vw, 1.85rem) !important;
+  line-height: 1.04 !important;
+  white-space: normal !important;
+}
+
+.production-file div:nth-child(4) {
+  grid-column: 2 / 3 !important;
+  grid-row: 1 / 2 !important;
+}
+
+.production-file div:nth-child(5) {
+  grid-column: 2 / 3 !important;
+  grid-row: 2 / 3 !important;
+}
+
+.production-file div:nth-child(2) {
+  grid-column: 2 / 3 !important;
+  grid-row: 3 / 4 !important;
+}
+
+.production-file div:nth-child(3) {
+  grid-column: 2 / 3 !important;
+  grid-row: 4 / 5 !important;
+}
+
+.production-file div:nth-child(6) {
+  grid-column: 2 / 3 !important;
+  grid-row: 5 / 6 !important;
+}
+
+.production-file div:nth-child(7) {
+  grid-column: 2 / 3 !important;
+  grid-row: 6 / 7 !important;
+}
+
+.production-file div:nth-child(8) {
+  grid-column: 2 / 3 !important;
+  grid-row: 7 / 8 !important;
+}
+
+.production-file div:nth-child(9) {
+  grid-column: 2 / 3 !important;
+  grid-row: 8 / 9 !important;
+}
