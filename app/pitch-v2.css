@@ -4917,3 +4917,341 @@ html[data-cinematic-look="a-ghost-story"] .section-shell {
   background-size: cover !important;
   background-position: center center !important;
 }
+
+/* --------------------------------------------------------------------------
+   Final stabilization pass.
+   The previous experimental blocks created visual noise. This block forces the
+   presentation back into controlled editorial cinema layouts.
+   -------------------------------------------------------------------------- */
+
+.section-shell {
+  isolation: isolate !important;
+}
+
+.scene-glass,
+.memory-invasion,
+.chapter-object-echo,
+.chapter-title-field,
+.opening-section .hero-statement,
+.reference-universe {
+  display: none !important;
+}
+
+.opening-section {
+  min-height: 100svh !important;
+  background: #030405 !important;
+}
+
+.opening-section .hero-lens-stage,
+.opening-section .hero-reality {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.opening-section .hero-reality {
+  background-size: cover !important;
+  background-position: 50% 50% !important;
+  transform: none !important;
+  filter: saturate(0.72) brightness(0.72) contrast(1.1) !important;
+}
+
+.opening-section .hero-reality::after {
+  background:
+    linear-gradient(90deg, rgba(0,0,0,0.78), rgba(0,0,0,0.18) 48%, rgba(0,0,0,0.72)),
+    linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.12) 42%, rgba(0,0,0,0.82)) !important;
+}
+
+.opening-copy {
+  position: relative !important;
+  z-index: 4 !important;
+  min-height: 100svh !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 0.66fr) minmax(24rem, 0.34fr) !important;
+  grid-template-rows: 1fr auto 1fr !important;
+  gap: clamp(2rem, 4vw, 5rem) !important;
+  padding: clamp(7rem, 12vh, 9rem) clamp(5rem, 8vw, 9rem) clamp(5rem, 8vh, 7rem) !important;
+  align-items: center !important;
+}
+
+.opening-section .kinetic-title {
+  grid-column: 1 / 2 !important;
+  grid-row: 2 !important;
+  width: min(40rem, 38vw) !important;
+  margin: 0 !important;
+  transform: none !important;
+  align-self: center !important;
+}
+
+.opening-section .title-still,
+.opening-section .title-here {
+  text-shadow: 0 28px 90px rgba(0,0,0,0.72) !important;
+}
+
+.opening-section .title-still {
+  font-size: clamp(5.2rem, 8.3vw, 9.2rem) !important;
+  line-height: 0.82 !important;
+  letter-spacing: -0.065em !important;
+}
+
+.opening-section .title-here {
+  margin-top: 0 !important;
+  margin-left: clamp(2.2rem, 5vw, 5.5rem) !important;
+  font-size: clamp(4.65rem, 7.4vw, 8.2rem) !important;
+  line-height: 0.82 !important;
+  letter-spacing: -0.055em !important;
+}
+
+.opening-section .microcopy {
+  grid-column: 1 / 2 !important;
+  grid-row: 1 !important;
+  align-self: end !important;
+  max-width: 34rem !important;
+  opacity: 0.36 !important;
+}
+
+.opening-section .opening-logline {
+  grid-column: 2 / 3 !important;
+  grid-row: 2 !important;
+  align-self: center !important;
+  justify-self: end !important;
+  width: min(30rem, 30vw) !important;
+  padding: 0 0 0 1.5rem !important;
+  border-left: 1px solid rgba(239,234,224,0.22) !important;
+  background: transparent !important;
+  font-size: clamp(1rem, 1.15vw, 1.22rem) !important;
+  line-height: 1.55 !important;
+  color: rgba(239,234,224,0.68) !important;
+}
+
+.story-rail {
+  gap: 0 !important;
+}
+
+.story-chapter,
+.story-chapter[data-chapter="return"],
+.story-chapter[data-chapter="disposal"],
+.story-chapter[data-chapter="reappearance"],
+.story-chapter[data-chapter="accumulation"],
+.story-chapter[data-chapter="confrontation"],
+.story-chapter[data-chapter="door-opens"] {
+  height: 100svh !important;
+  min-height: 100svh !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 0.56fr) minmax(0, 0.44fr) !important;
+  gap: clamp(3rem, 5vw, 6rem) !important;
+  align-items: center !important;
+  padding: clamp(6.5rem, 10vh, 8rem) clamp(5rem, 7vw, 8rem) clamp(4rem, 6vh, 5.5rem) !important;
+  overflow: hidden !important;
+  background:
+    radial-gradient(circle at 28% 34%, rgba(122,142,158,0.12), transparent 25rem),
+    #050607 !important;
+}
+
+.story-chapter:nth-child(even),
+.story-chapter[data-chapter="disposal"],
+.story-chapter[data-chapter="accumulation"] {
+  grid-template-columns: minmax(0, 0.44fr) minmax(0, 0.56fr) !important;
+}
+
+.story-chapter::before {
+  left: clamp(5rem, 7vw, 8rem) !important;
+  top: clamp(6.5rem, 10vh, 8rem) !important;
+  opacity: 0.78 !important;
+}
+
+.story-chapter::after {
+  display: none !important;
+}
+
+.story-chapter .chapter-media,
+.story-chapter[data-chapter="return"] .chapter-media,
+.story-chapter[data-chapter="disposal"] .chapter-media,
+.story-chapter[data-chapter="reappearance"] .chapter-media,
+.story-chapter[data-chapter="accumulation"] .chapter-media,
+.story-chapter[data-chapter="confrontation"] .chapter-media,
+.story-chapter[data-chapter="door-opens"] .chapter-media {
+  position: relative !important;
+  inset: auto !important;
+  grid-column: 1 / 2 !important;
+  grid-row: 1 !important;
+  width: 100% !important;
+  height: min(62vh, 40rem) !important;
+  margin: 0 !important;
+  align-self: center !important;
+  justify-self: stretch !important;
+  clip-path: inset(0 round 1.35rem) !important;
+  transform: none !important;
+  opacity: 0.74 !important;
+  mix-blend-mode: normal !important;
+  filter: saturate(0.78) brightness(0.75) contrast(1.1) !important;
+  box-shadow: 0 34px 120px rgba(0,0,0,0.46) !important;
+  border: 1px solid rgba(239,234,224,0.08) !important;
+}
+
+.story-chapter:nth-child(even) .chapter-media,
+.story-chapter[data-chapter="disposal"] .chapter-media,
+.story-chapter[data-chapter="accumulation"] .chapter-media {
+  grid-column: 2 / 3 !important;
+}
+
+.story-chapter .chapter-media img {
+  object-position: center center !important;
+}
+
+.story-chapter .chapter-copy,
+.story-chapter[data-chapter="return"] .chapter-copy,
+.story-chapter[data-chapter="disposal"] .chapter-copy,
+.story-chapter[data-chapter="reappearance"] .chapter-copy,
+.story-chapter[data-chapter="accumulation"] .chapter-copy,
+.story-chapter[data-chapter="confrontation"] .chapter-copy,
+.story-chapter[data-chapter="door-opens"] .chapter-copy {
+  position: relative !important;
+  z-index: 5 !important;
+  grid-column: 2 / 3 !important;
+  grid-row: 1 !important;
+  width: min(34rem, 100%) !important;
+  max-width: 34rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  align-self: center !important;
+  justify-self: start !important;
+  display: block !important;
+  transform: none !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.story-chapter:nth-child(even) .chapter-copy,
+.story-chapter[data-chapter="disposal"] .chapter-copy,
+.story-chapter[data-chapter="accumulation"] .chapter-copy {
+  grid-column: 1 / 2 !important;
+}
+
+.story-chapter .chapter-copy h3,
+.story-chapter[data-chapter="return"] .chapter-copy h3,
+.story-chapter[data-chapter="disposal"] .chapter-copy h3,
+.story-chapter[data-chapter="reappearance"] .chapter-copy h3,
+.story-chapter[data-chapter="accumulation"] .chapter-copy h3,
+.story-chapter[data-chapter="confrontation"] .chapter-copy h3,
+.story-chapter[data-chapter="door-opens"] .chapter-copy h3 {
+  writing-mode: horizontal-tb !important;
+  text-orientation: mixed !important;
+  max-width: 9.5ch !important;
+  max-height: none !important;
+  margin: 0 0 clamp(1rem, 2vh, 1.35rem) !important;
+  font-size: clamp(3.4rem, 5.15vw, 6.3rem) !important;
+  line-height: 0.92 !important;
+  letter-spacing: -0.06em !important;
+  text-shadow: 0 20px 70px rgba(0,0,0,0.55) !important;
+}
+
+.story-chapter .chapter-copy p,
+.story-chapter .chapter-copy small {
+  margin-left: 0 !important;
+  grid-column: auto !important;
+}
+
+.story-chapter .chapter-copy p {
+  max-width: 31rem !important;
+  font-size: clamp(1rem, 1.1vw, 1.16rem) !important;
+  line-height: 1.58 !important;
+  color: rgba(239,234,224,0.66) !important;
+}
+
+.actor-portrait-frame {
+  height: min(66svh, 41rem) !important;
+  clip-path: inset(0 round 2rem) !important;
+  background: #5b5d58 !important;
+}
+
+.actor-portrait-frame img {
+  object-fit: contain !important;
+  object-position: center center !important;
+  transform: none !important;
+}
+
+.dna-section {
+  display: grid !important;
+  grid-template-columns: minmax(24rem, 32vw) minmax(0, 1fr) !important;
+  gap: clamp(3rem, 5vw, 6rem) !important;
+  align-items: center !important;
+  padding: clamp(7rem, 12vh, 9rem) clamp(5rem, 7vw, 8rem) clamp(4rem, 6vh, 5.5rem) !important;
+}
+
+.dna-section .dna-heading {
+  position: relative !important;
+  z-index: 6 !important;
+  grid-column: 1 / 2 !important;
+  width: auto !important;
+  max-width: 30rem !important;
+  margin: 0 !important;
+}
+
+.dna-section .dna-heading h2 {
+  max-width: 10ch !important;
+  font-size: clamp(3rem, 4.4vw, 5.3rem) !important;
+  line-height: 0.92 !important;
+  letter-spacing: -0.06em !important;
+}
+
+.dna-section .dna-note {
+  max-width: 22rem !important;
+  margin-top: clamp(1.1rem, 2vh, 1.55rem) !important;
+  font-size: clamp(0.86rem, 0.92vw, 0.98rem) !important;
+  line-height: 1.48 !important;
+  color: rgba(239,234,224,0.52) !important;
+}
+
+.theme-indicator,
+.restore-look-button {
+  max-width: 100% !important;
+  margin-top: 1rem !important;
+  padding: 0.58rem 0.78rem !important;
+  font-size: 0.5rem !important;
+  letter-spacing: 0.22em !important;
+  opacity: 0.48 !important;
+}
+
+.dna-section .film-reference-grid {
+  position: relative !important;
+  inset: auto !important;
+  grid-column: 2 / 3 !important;
+  width: 100% !important;
+  height: min(68vh, 46rem) !important;
+  display: grid !important;
+  grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+  grid-template-rows: repeat(8, minmax(0, 1fr)) !important;
+  gap: clamp(0.7rem, 0.9vw, 1rem) !important;
+  transform: none !important;
+}
+
+.dna-section .film-card:nth-child(1),
+.dna-section .film-card[data-active="true"] {
+  grid-column: 1 / 9 !important;
+  grid-row: 1 / 7 !important;
+}
+
+.dna-section .film-card:nth-child(2) {
+  grid-column: 9 / 13 !important;
+  grid-row: 1 / 3 !important;
+}
+
+.dna-section .film-card:nth-child(3) {
+  grid-column: 9 / 13 !important;
+  grid-row: 3 / 5 !important;
+}
+
+.dna-section .film-card:nth-child(4) {
+  grid-column: 9 / 13 !important;
+  grid-row: 5 / 7 !important;
+}
+
+.dna-section .film-card:nth-child(5) {
+  grid-column: 1 / 13 !important;
+  grid-row: 7 / 9 !important;
+}
