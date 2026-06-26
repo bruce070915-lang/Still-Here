@@ -7,7 +7,7 @@ export const productionInfo = [
   ["Institution", "New York Film Academy"],
   ["Writer / Director", "Yihao Shi"],
   ["Cast", "One Actor"],
-  ["Runtime", "To Be Confirmed"],
-  ["Location", "To Be Confirmed"],
+  ["Runtime", "July 24, 2026"],
+  ["Location", "Glendale"],
   ["Production Status", "In Development"]
 ];
