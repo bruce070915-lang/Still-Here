@@ -4737,3 +4737,183 @@ html[data-cinematic-look="a-ghost-story"] .section-shell {
     font-size: clamp(4rem, 8vw, 6.2rem) !important;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Targeted QA fixes from presentation review screenshots.
+   Scope: crop, hierarchy and collision fixes only.
+   -------------------------------------------------------------------------- */
+
+.opening-section {
+  overflow: hidden !important;
+}
+
+.opening-section .hero-statement {
+  display: none !important;
+}
+
+.opening-section .hero-reality {
+  background-position: center center !important;
+  transform: scale(1) !important;
+  filter: saturate(0.72) brightness(0.8) contrast(1.08) !important;
+}
+
+.opening-section .hero-reality::after {
+  background:
+    linear-gradient(90deg, rgba(0,0,0,0.62), rgba(0,0,0,0.14) 52%, rgba(0,0,0,0.7)),
+    linear-gradient(180deg, rgba(0,0,0,0.24), rgba(0,0,0,0.74)) !important;
+}
+
+.opening-copy {
+  padding: clamp(7rem, 12vh, 9rem) clamp(5.5rem, 8vw, 9rem) clamp(5rem, 8vh, 7rem) !important;
+  grid-template-columns: minmax(0, 0.92fr) minmax(22rem, 0.52fr) !important;
+}
+
+.opening-section .kinetic-title {
+  width: min(48rem, 44vw) !important;
+  align-self: end !important;
+  transform: translateY(-2vh) !important;
+}
+
+.opening-section .title-still {
+  font-size: clamp(5.8rem, 10.4vw, 11.4rem) !important;
+  letter-spacing: -0.07em !important;
+}
+
+.opening-section .title-here {
+  margin-left: clamp(2rem, 5vw, 5.2rem) !important;
+  margin-top: -0.04em !important;
+  font-size: clamp(5rem, 8.9vw, 9.9rem) !important;
+  letter-spacing: -0.058em !important;
+}
+
+.opening-section .opening-logline {
+  width: min(31rem, 30vw) !important;
+  background: transparent !important;
+  color: rgba(239,234,224,0.66) !important;
+}
+
+.story-chapter[data-chapter="disposal"],
+.story-chapter[data-chapter="reappearance"] {
+  grid-template-columns: minmax(0, 0.58fr) minmax(0, 0.42fr) !important;
+  padding: 0 clamp(5rem, 7vw, 8rem) !important;
+}
+
+.story-chapter[data-chapter="disposal"]::after {
+  display: none !important;
+}
+
+.story-chapter[data-chapter="disposal"] .chapter-title-field span,
+.story-chapter[data-chapter="reappearance"] .chapter-title-field span {
+  opacity: 0.24 !important;
+  color: rgba(239,234,224,0.035) !important;
+}
+
+.story-chapter[data-chapter="disposal"] .chapter-media,
+.story-chapter[data-chapter="reappearance"] .chapter-media {
+  grid-column: 1 / 2 !important;
+  grid-row: 1 !important;
+  width: min(46vw, 54rem) !important;
+  height: min(64vh, 41rem) !important;
+  margin: 0 !important;
+  align-self: center !important;
+  justify-self: start !important;
+  clip-path: inset(0 round 1.5rem) !important;
+  transform: none !important;
+  opacity: 0.68 !important;
+  filter: saturate(0.82) brightness(0.78) contrast(1.08) !important;
+  box-shadow: 0 34px 110px rgba(0,0,0,0.45) !important;
+}
+
+.story-chapter[data-chapter="disposal"] .chapter-copy,
+.story-chapter[data-chapter="reappearance"] .chapter-copy {
+  grid-column: 2 / 3 !important;
+  grid-row: 1 !important;
+  width: min(34rem, 34vw) !important;
+  max-width: 34rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  align-self: center !important;
+  justify-self: end !important;
+  display: block !important;
+  transform: none !important;
+  background: transparent !important;
+  border: 0 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+}
+
+.story-chapter[data-chapter="disposal"] .chapter-copy h3,
+.story-chapter[data-chapter="reappearance"] .chapter-copy h3 {
+  writing-mode: horizontal-tb !important;
+  text-orientation: mixed !important;
+  max-height: none !important;
+  max-width: 9ch !important;
+  font-size: clamp(3.8rem, 5.8vw, 6.8rem) !important;
+  line-height: 0.9 !important;
+  letter-spacing: -0.065em !important;
+}
+
+.story-chapter[data-chapter="disposal"] .chapter-copy p,
+.story-chapter[data-chapter="disposal"] .chapter-copy small,
+.story-chapter[data-chapter="reappearance"] .chapter-copy p,
+.story-chapter[data-chapter="reappearance"] .chapter-copy small {
+  margin-left: 0 !important;
+  grid-column: auto !important;
+}
+
+.actor-portrait-frame {
+  background: #5b5d58 !important;
+}
+
+.actor-portrait-frame img {
+  object-fit: contain !important;
+  object-position: center center !important;
+  transform: none !important;
+}
+
+.dna-section .dna-heading {
+  width: min(30rem, 29vw) !important;
+}
+
+.dna-section .dna-heading h2 {
+  max-width: 10ch !important;
+  font-size: clamp(3.1rem, 4.7vw, 5.7rem) !important;
+  line-height: 0.9 !important;
+}
+
+.dna-section .dna-note {
+  max-width: 22rem !important;
+  font-size: clamp(0.86rem, 0.9vw, 0.96rem) !important;
+  line-height: 1.45 !important;
+  color: rgba(239,234,224,0.52) !important;
+}
+
+.theme-indicator,
+.restore-look-button {
+  margin-top: 1.05rem !important;
+  padding: 0.58rem 0.78rem !important;
+  font-size: 0.5rem !important;
+  letter-spacing: 0.22em !important;
+  opacity: 0.52 !important;
+}
+
+.reference-universe {
+  width: min(17rem, 18vw) !important;
+  opacity: 0.26 !important;
+}
+
+.reference-universe b {
+  font-size: clamp(0.85rem, 1vw, 1.05rem) !important;
+  line-height: 1.08 !important;
+  letter-spacing: 0.18em !important;
+}
+
+.reference-universe p {
+  display: none !important;
+}
+
+.dna-section .film-placeholder--photo {
+  background-size: cover !important;
+  background-position: center center !important;
+}
