@@ -401,3 +401,109 @@ html body .dna-section .film-reference-grid .film-card[data-active="true"] .colo
     margin-top: 1rem !important;
   }
 }
+
+/* Design QA / performance polish.
+   Keep the existing art direction, but reduce heavy paint work during scroll and
+   raise the readability floor for dark stills and small editorial text. */
+
+.scene-glass,
+.global-liquid-layer span,
+.liquid-glass::before,
+.hero-memory-lens::before {
+  filter: none !important;
+}
+
+.scene-glass {
+  opacity: 0.18 !important;
+  backdrop-filter: blur(10px) saturate(1.12) !important;
+  -webkit-backdrop-filter: blur(10px) saturate(1.12) !important;
+}
+
+.floating-nav.scene-index,
+.liquid-glass,
+.film-card__glass,
+.actor-meta-glass,
+.theme-indicator,
+.restore-look-button,
+.sound-button {
+  backdrop-filter: blur(10px) saturate(1.16) !important;
+  -webkit-backdrop-filter: blur(10px) saturate(1.16) !important;
+}
+
+.hero-memory-lens {
+  filter: blur(0.35px) saturate(0.9) brightness(1.08) !important;
+}
+
+.gsap-reveal,
+.chapter-panel,
+.mood-frame,
+.reappear-object,
+.memory-fragment,
+.bag-vortex,
+.film-card,
+.hero-reality,
+.hero-memory-lens {
+  will-change: transform, opacity;
+}
+
+.hero-reality,
+.chapter-media img,
+.mood-frame,
+.nonsync-still span,
+.logline-still-stack span,
+.film-placeholder--photo,
+.director-photo img,
+.actor-portrait-frame img {
+  filter: saturate(1.04) brightness(1.18) contrast(1.03) !important;
+}
+
+.chapter-media__veil {
+  opacity: 0.22 !important;
+}
+
+.opening-section .hero-reality::after {
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.34), rgba(0, 0, 0, 0.04) 48%, rgba(0, 0, 0, 0.36)),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.02) 44%, rgba(0, 0, 0, 0.36)) !important;
+}
+
+.section-shell p,
+.chapter-copy p,
+.story-intro p,
+.dna-note,
+.language-panel p,
+.bio,
+.actor-bio-editorial,
+.film-card__glass p,
+.production-file span {
+  color: rgba(239, 234, 224, 0.76) !important;
+}
+
+.section-shell small,
+.section-eyebrow,
+.chapter-object-echo,
+.theme-indicator,
+.film-card__top,
+.production-file span {
+  color: rgba(239, 234, 224, 0.52) !important;
+}
+
+.chapter-copy h3,
+.story-intro h2,
+.loop-title,
+.split-heading h2,
+.mood-heading h2,
+.dna-heading h2,
+.visual-language-section > h2,
+.director-copy h2,
+.actor-copy h2,
+.closing-final-card h2 {
+  text-shadow: 0 26px 74px rgba(0, 0, 0, 0.56) !important;
+}
+
+.film-card__glass h3,
+.production-file b,
+.director-copy blockquote,
+.actor-casting-line b {
+  color: rgba(246, 242, 235, 0.94) !important;
+}
