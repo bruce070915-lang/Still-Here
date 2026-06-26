@@ -3823,6 +3823,98 @@ html[data-cinematic-look="a-ghost-story"] .section-shell {
   grid-row: 7 / 9 !important;
 }
 
+/* --------------------------------------------------------------------------
+   Readability safety pass: keep titles inside frame and lift all imagery.
+   -------------------------------------------------------------------------- */
+
+.hero-reality,
+.chapter-media,
+.chapter-media img,
+.mood-frame,
+.film-placeholder--photo,
+.actor-portrait-frame,
+.actor-portrait-frame img,
+.director-photo img,
+.logline-still-stack,
+.nonsync-still,
+.modal-still-placeholder--photo {
+  filter: saturate(0.92) brightness(1.18) contrast(1.05) !important;
+}
+
+.chapter-media {
+  opacity: 0.86 !important;
+}
+
+.chapter-media__veil {
+  background:
+    linear-gradient(90deg, rgba(0,0,0,0.18), transparent 42%, rgba(0,0,0,0.22)),
+    linear-gradient(180deg, rgba(0,0,0,0.1), rgba(0,0,0,0.2)) !important;
+}
+
+.opening-section .hero-reality {
+  filter: saturate(0.86) brightness(0.98) contrast(1.04) !important;
+}
+
+.opening-section .hero-reality::after {
+  background:
+    linear-gradient(90deg, rgba(0,0,0,0.58), rgba(0,0,0,0.08) 50%, rgba(0,0,0,0.54)),
+    linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0.54)) !important;
+}
+
+.story-chapter .chapter-copy,
+.story-chapter[data-chapter="return"] .chapter-copy,
+.story-chapter[data-chapter="disposal"] .chapter-copy,
+.story-chapter[data-chapter="reappearance"] .chapter-copy,
+.story-chapter[data-chapter="accumulation"] .chapter-copy,
+.story-chapter[data-chapter="confrontation"] .chapter-copy,
+.story-chapter[data-chapter="door-opens"] .chapter-copy {
+  width: min(31rem, 100%) !important;
+  max-width: 31rem !important;
+  overflow: visible !important;
+}
+
+.story-chapter .chapter-copy h3,
+.story-chapter[data-chapter="return"] .chapter-copy h3,
+.story-chapter[data-chapter="disposal"] .chapter-copy h3,
+.story-chapter[data-chapter="reappearance"] .chapter-copy h3,
+.story-chapter[data-chapter="accumulation"] .chapter-copy h3,
+.story-chapter[data-chapter="confrontation"] .chapter-copy h3,
+.story-chapter[data-chapter="door-opens"] .chapter-copy h3 {
+  max-width: 100% !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  font-size: clamp(3rem, 4.55vw, 5.35rem) !important;
+  line-height: 0.95 !important;
+  letter-spacing: -0.062em !important;
+}
+
+.story-chapter[data-chapter="confrontation"] .chapter-copy h3 {
+  font-size: clamp(2.75rem, 3.85vw, 4.35rem) !important;
+  max-width: 11ch !important;
+}
+
+.story-chapter[data-chapter="reappearance"] .chapter-copy h3 {
+  font-size: clamp(2.85rem, 4vw, 4.75rem) !important;
+  max-width: 12ch !important;
+}
+
+.story-chapter .chapter-copy p {
+  max-width: 30rem !important;
+}
+
+.actor-portrait-frame img {
+  filter: saturate(1) brightness(1.08) contrast(1.02) !important;
+}
+
+.film-card {
+  filter: saturate(0.84) brightness(0.82) !important;
+}
+
+.dna-section .film-card:nth-child(1),
+.dna-section .film-card[data-active="true"] {
+  filter: saturate(1) brightness(1.02) contrast(1.04) !important;
+}
+
 .dna-section .film-card:not(:first-child) .film-card__glass {
   padding: 0.66rem !important;
 }
