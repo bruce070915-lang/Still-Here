@@ -9,6 +9,7 @@ import "@fontsource/ibm-plex-mono/400.css";
 import "@fontsource/ibm-plex-mono/600.css";
 import "./globals.css";
 import "./pitch-v2.css";
+import "./final-polish.css";
 import { siteContent } from "@/data/siteContent";
 
 export const metadata: Metadata = {

@@ -3823,6 +3823,566 @@ html[data-cinematic-look="a-ghost-story"] .section-shell {
   grid-row: 7 / 9 !important;
 }
 
+/* Absolute final override: this block must stay at EOF. */
+.opening-section {
+  overflow: hidden !important;
+  background: #050708 !important;
+}
+
+.opening-section .hero-reality {
+  background-position: 50% 52% !important;
+  filter: saturate(0.92) brightness(1.12) contrast(1.02) !important;
+}
+
+.opening-section .hero-memory-lens {
+  opacity: 0.24 !important;
+  filter: blur(0.8px) saturate(0.82) brightness(1.02) url(#liquid-distortion) !important;
+}
+
+.opening-section .hero-reality::after {
+  background:
+    linear-gradient(90deg, rgba(0,0,0,0.46), rgba(0,0,0,0.1) 48%, rgba(0,0,0,0.5)),
+    linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0.04) 44%, rgba(0,0,0,0.52)) !important;
+}
+
+.opening-section .hero-statement {
+  opacity: 0.045 !important;
+  inset: auto 3vw 6vh auto !important;
+  width: min(58vw, 58rem) !important;
+  transform: none !important;
+  pointer-events: none !important;
+}
+
+.opening-section .opening-copy {
+  position: relative !important;
+  z-index: 30 !important;
+  min-height: 100svh !important;
+  display: grid !important;
+  grid-template-columns: minmax(32rem, 0.52fr) minmax(30rem, 0.48fr) !important;
+  grid-template-rows: minmax(6rem, 0.72fr) auto auto minmax(5rem, 0.56fr) !important;
+  column-gap: clamp(4rem, 7vw, 9rem) !important;
+  row-gap: clamp(1rem, 2vh, 1.6rem) !important;
+  padding: clamp(8.5rem, 14vh, 10.5rem) clamp(5.5rem, 8vw, 9rem) clamp(4.8rem, 7vh, 6.5rem) !important;
+  align-items: start !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  clip-path: none !important;
+  filter: none !important;
+}
+
+.opening-section .kinetic-title {
+  grid-column: 1 / 2 !important;
+  grid-row: 2 / 3 !important;
+  width: min(42rem, 39vw) !important;
+  max-width: 42rem !important;
+  margin: 0 !important;
+  transform: none !important;
+  align-self: end !important;
+  overflow: visible !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  clip-path: none !important;
+  filter: none !important;
+}
+
+.opening-section .title-still,
+.opening-section .title-here {
+  display: block !important;
+  max-width: 100% !important;
+  color: rgba(244,240,232,0.98) !important;
+  text-shadow: 0 30px 88px rgba(0,0,0,0.62) !important;
+  font-variation-settings: "wdth" var(--title-wdth), "wght" var(--title-wght) !important;
+  white-space: nowrap !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  clip-path: none !important;
+  transform: none !important;
+}
+
+.opening-section .title-still {
+  font-size: clamp(4.8rem, 7.45vw, 8.8rem) !important;
+  line-height: 0.8 !important;
+  letter-spacing: -0.065em !important;
+}
+
+.opening-section .title-here {
+  margin-top: 0.08em !important;
+  margin-left: clamp(2rem, 4vw, 4.8rem) !important;
+  font-size: clamp(4.2rem, 6.65vw, 7.8rem) !important;
+  line-height: 0.8 !important;
+  letter-spacing: -0.06em !important;
+}
+
+.opening-section .microcopy {
+  grid-column: 1 / 3 !important;
+  grid-row: 1 / 2 !important;
+  align-self: end !important;
+  justify-self: start !important;
+  max-width: 44rem !important;
+  margin: 0 !important;
+  opacity: 0.72 !important;
+  color: rgba(239,234,224,0.62) !important;
+  visibility: visible !important;
+}
+
+.opening-identity {
+  grid-column: 1 / 2 !important;
+  grid-row: 3 / 4 !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.7rem 1.2rem !important;
+  margin-top: 0.4rem !important;
+  color: rgba(239,234,224,0.74) !important;
+  font-size: clamp(0.76rem, 0.82vw, 0.9rem) !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.opening-identity span + span {
+  color: rgba(239,234,224,0.46) !important;
+}
+
+.opening-section .opening-logline {
+  grid-column: 2 / 3 !important;
+  grid-row: 2 / 4 !important;
+  align-self: end !important;
+  justify-self: end !important;
+  width: min(34rem, 100%) !important;
+  max-width: 34rem !important;
+  margin: 0 0 0.4rem !important;
+  padding: 1.1rem 0 0 1.45rem !important;
+  border-left: 1px solid rgba(239,234,224,0.28) !important;
+  background: transparent !important;
+  font-size: clamp(1.02rem, 1.08vw, 1.22rem) !important;
+  line-height: 1.58 !important;
+  letter-spacing: -0.012em !important;
+  color: rgba(244,240,232,0.8) !important;
+  text-shadow: 0 20px 70px rgba(0,0,0,0.68) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.chapter-media,
+.chapter-media img,
+.mood-frame,
+.nonsync-still span,
+.reference-study-image,
+.film-placeholder--photo,
+.modal-still-placeholder--photo,
+.director-photo img,
+.actor-portrait-frame img {
+  filter: saturate(1.03) brightness(1.2) contrast(1.02) !important;
+}
+
+.chapter-media {
+  opacity: 0.94 !important;
+}
+
+.chapter-media__veil {
+  opacity: 0.08 !important;
+  background: linear-gradient(180deg, rgba(0,0,0,0.03), rgba(0,0,0,0.14)) !important;
+}
+
+.story-chapter[data-chapter="return"] .chapter-media,
+.story-chapter[data-chapter="disposal"] .chapter-media,
+.story-chapter[data-chapter="reappearance"] .chapter-media,
+.story-chapter[data-chapter="accumulation"] .chapter-media,
+.story-chapter[data-chapter="confrontation"] .chapter-media,
+.story-chapter[data-chapter="door-opens"] .chapter-media {
+  filter: saturate(1.03) brightness(1.18) contrast(1.02) !important;
+  opacity: 0.96 !important;
+}
+
+.story-chapter .chapter-copy h3,
+.story-chapter[data-chapter="return"] .chapter-copy h3,
+.story-chapter[data-chapter="disposal"] .chapter-copy h3,
+.story-chapter[data-chapter="reappearance"] .chapter-copy h3,
+.story-chapter[data-chapter="accumulation"] .chapter-copy h3,
+.story-chapter[data-chapter="confrontation"] .chapter-copy h3,
+.story-chapter[data-chapter="door-opens"] .chapter-copy h3 {
+  max-width: min(42rem, 42vw) !important;
+  font-size: clamp(2.85rem, 4.15vw, 5rem) !important;
+  line-height: 0.92 !important;
+  letter-spacing: -0.062em !important;
+  white-space: normal !important;
+  overflow: visible !important;
+}
+
+.story-chapter .chapter-copy p {
+  max-width: min(31rem, 34vw) !important;
+  color: rgba(239,234,224,0.74) !important;
+}
+
+.dna-section {
+  grid-template-columns: minmax(23rem, 30vw) minmax(0, 1fr) !important;
+  gap: clamp(3.5rem, 6vw, 7rem) !important;
+}
+
+.dna-section .dna-heading h2 {
+  max-width: 10ch !important;
+  font-size: clamp(2.9rem, 4.05vw, 4.9rem) !important;
+  line-height: 0.94 !important;
+}
+
+.reference-universe {
+  display: none !important;
+}
+
+.dna-section .film-reference-grid {
+  height: min(67vh, 43rem) !important;
+  grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+  grid-template-rows: repeat(8, minmax(0, 1fr)) !important;
+  gap: clamp(0.9rem, 1.05vw, 1.25rem) !important;
+}
+
+.dna-section .film-card,
+.dna-section .film-card[data-active="true"] {
+  filter: saturate(1.03) brightness(1.1) contrast(1.02) !important;
+  transform: none !important;
+}
+
+.dna-section .film-card:nth-child(1),
+.dna-section .film-card:nth-child(1)[data-active="true"] {
+  grid-column: 1 / 7 !important;
+  grid-row: 1 / 5 !important;
+}
+
+.dna-section .film-card:nth-child(2),
+.dna-section .film-card:nth-child(2)[data-active="true"] {
+  grid-column: 7 / 13 !important;
+  grid-row: 1 / 5 !important;
+}
+
+.dna-section .film-card:nth-child(3),
+.dna-section .film-card:nth-child(3)[data-active="true"] {
+  grid-column: 1 / 7 !important;
+  grid-row: 5 / 9 !important;
+}
+
+.dna-section .film-card:nth-child(4),
+.dna-section .film-card:nth-child(4)[data-active="true"] {
+  grid-column: 7 / 13 !important;
+  grid-row: 5 / 9 !important;
+}
+
+.dna-section .film-card:nth-child(n+5) {
+  display: none !important;
+}
+
+.dna-section .film-card[data-active="true"] {
+  z-index: 4 !important;
+  outline: 1px solid rgba(239,234,224,0.42) !important;
+  box-shadow: 0 26px 90px rgba(0,0,0,0.48), 0 0 0 1px color-mix(in srgb, var(--amber) 36%, transparent) !important;
+}
+
+.dna-section--active-look .film-card:not([data-active="true"]) {
+  opacity: 0.58 !important;
+  filter: saturate(0.82) brightness(0.9) contrast(1.02) !important;
+}
+
+.film-card__glass h3 {
+  font-size: clamp(1.35rem, 1.9vw, 2.25rem) !important;
+  line-height: 0.98 !important;
+}
+
+@media (max-width: 1100px) {
+  .opening-section .opening-copy {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: minmax(5rem, 0.5fr) auto auto auto !important;
+    padding: 7rem 2rem 4rem !important;
+  }
+
+  .opening-section .kinetic-title,
+  .opening-section .opening-logline,
+  .opening-identity,
+  .opening-section .microcopy {
+    grid-column: 1 / 2 !important;
+    justify-self: start !important;
+    width: min(100%, 38rem) !important;
+  }
+
+  .opening-section .opening-logline {
+    grid-row: 4 / 5 !important;
+    margin-top: 1rem !important;
+  }
+}
+
+/* Final delivery QA pass: restore homepage text, brighten imagery, and keep the
+   four uploaded color references controlled. */
+.opening-section {
+  overflow: hidden !important;
+  background: #050708 !important;
+}
+
+.opening-section .hero-reality {
+  background-position: 50% 52% !important;
+  filter: saturate(0.92) brightness(1.1) contrast(1.03) !important;
+}
+
+.opening-section .hero-memory-lens {
+  opacity: 0.26 !important;
+  filter: blur(0.8px) saturate(0.8) brightness(1) url(#liquid-distortion) !important;
+}
+
+.opening-section .hero-reality::after {
+  background:
+    linear-gradient(90deg, rgba(0,0,0,0.48), rgba(0,0,0,0.12) 48%, rgba(0,0,0,0.52)),
+    linear-gradient(180deg, rgba(0,0,0,0.22), rgba(0,0,0,0.04) 44%, rgba(0,0,0,0.54)) !important;
+}
+
+.opening-section .hero-statement {
+  opacity: 0.055 !important;
+  inset: auto 3vw 6vh auto !important;
+  width: min(58vw, 58rem) !important;
+  transform: none !important;
+  pointer-events: none !important;
+}
+
+.opening-section .opening-copy {
+  position: relative !important;
+  z-index: 20 !important;
+  min-height: 100svh !important;
+  display: grid !important;
+  grid-template-columns: minmax(32rem, 0.52fr) minmax(30rem, 0.48fr) !important;
+  grid-template-rows: minmax(6rem, 0.72fr) auto auto minmax(5rem, 0.56fr) !important;
+  column-gap: clamp(4rem, 7vw, 9rem) !important;
+  row-gap: clamp(1rem, 2vh, 1.6rem) !important;
+  padding: clamp(8.5rem, 14vh, 10.5rem) clamp(5.5rem, 8vw, 9rem) clamp(4.8rem, 7vh, 6.5rem) !important;
+  align-items: start !important;
+}
+
+.opening-section .kinetic-title {
+  grid-column: 1 / 2 !important;
+  grid-row: 2 / 3 !important;
+  width: min(42rem, 39vw) !important;
+  max-width: 42rem !important;
+  margin: 0 !important;
+  transform: none !important;
+  align-self: end !important;
+  overflow: visible !important;
+}
+
+.opening-section .title-still,
+.opening-section .title-here {
+  display: block !important;
+  max-width: 100% !important;
+  color: rgba(244,240,232,0.98) !important;
+  text-shadow: 0 30px 88px rgba(0,0,0,0.62) !important;
+  font-variation-settings: "wdth" var(--title-wdth), "wght" var(--title-wght) !important;
+  white-space: nowrap !important;
+}
+
+.opening-section .title-still {
+  font-size: clamp(4.8rem, 7.45vw, 8.8rem) !important;
+  line-height: 0.8 !important;
+  letter-spacing: -0.065em !important;
+}
+
+.opening-section .title-here {
+  margin-top: 0.08em !important;
+  margin-left: clamp(2rem, 4vw, 4.8rem) !important;
+  font-size: clamp(4.2rem, 6.65vw, 7.8rem) !important;
+  line-height: 0.8 !important;
+  letter-spacing: -0.06em !important;
+}
+
+.opening-section .microcopy {
+  grid-column: 1 / 3 !important;
+  grid-row: 1 / 2 !important;
+  align-self: end !important;
+  justify-self: start !important;
+  max-width: 44rem !important;
+  margin: 0 !important;
+  opacity: 0.72 !important;
+  color: rgba(239,234,224,0.62) !important;
+}
+
+.opening-identity {
+  grid-column: 1 / 2 !important;
+  grid-row: 3 / 4 !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.7rem 1.2rem !important;
+  margin-top: 0.4rem !important;
+  color: rgba(239,234,224,0.74) !important;
+  font-size: clamp(0.76rem, 0.82vw, 0.9rem) !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+}
+
+.opening-identity span + span {
+  color: rgba(239,234,224,0.46) !important;
+}
+
+.opening-section .opening-logline {
+  grid-column: 2 / 3 !important;
+  grid-row: 2 / 4 !important;
+  align-self: end !important;
+  justify-self: end !important;
+  width: min(34rem, 100%) !important;
+  max-width: 34rem !important;
+  margin: 0 0 0.4rem !important;
+  padding: 1.1rem 0 0 1.45rem !important;
+  border-left: 1px solid rgba(239,234,224,0.28) !important;
+  background: transparent !important;
+  font-size: clamp(1.02rem, 1.08vw, 1.22rem) !important;
+  line-height: 1.58 !important;
+  letter-spacing: -0.012em !important;
+  color: rgba(244,240,232,0.8) !important;
+  text-shadow: 0 20px 70px rgba(0,0,0,0.68) !important;
+}
+
+.chapter-media,
+.chapter-media img,
+.mood-frame,
+.nonsync-still span,
+.reference-study-image,
+.film-placeholder--photo,
+.modal-still-placeholder--photo,
+.director-photo img,
+.actor-portrait-frame img {
+  filter: saturate(1.02) brightness(1.18) contrast(1.03) !important;
+}
+
+.chapter-media {
+  opacity: 0.92 !important;
+}
+
+.chapter-media__veil {
+  opacity: 0.1 !important;
+  background: linear-gradient(180deg, rgba(0,0,0,0.04), rgba(0,0,0,0.16)) !important;
+}
+
+.story-chapter[data-chapter="return"] .chapter-media,
+.story-chapter[data-chapter="disposal"] .chapter-media,
+.story-chapter[data-chapter="reappearance"] .chapter-media,
+.story-chapter[data-chapter="accumulation"] .chapter-media,
+.story-chapter[data-chapter="confrontation"] .chapter-media,
+.story-chapter[data-chapter="door-opens"] .chapter-media {
+  filter: saturate(1.02) brightness(1.15) contrast(1.03) !important;
+  opacity: 0.94 !important;
+}
+
+.story-chapter .chapter-copy h3,
+.story-chapter[data-chapter="return"] .chapter-copy h3,
+.story-chapter[data-chapter="disposal"] .chapter-copy h3,
+.story-chapter[data-chapter="reappearance"] .chapter-copy h3,
+.story-chapter[data-chapter="accumulation"] .chapter-copy h3,
+.story-chapter[data-chapter="confrontation"] .chapter-copy h3,
+.story-chapter[data-chapter="door-opens"] .chapter-copy h3 {
+  max-width: min(42rem, 42vw) !important;
+  font-size: clamp(2.85rem, 4.15vw, 5rem) !important;
+  line-height: 0.92 !important;
+  letter-spacing: -0.062em !important;
+  white-space: normal !important;
+  overflow: visible !important;
+}
+
+.story-chapter .chapter-copy p {
+  max-width: min(31rem, 34vw) !important;
+  color: rgba(239,234,224,0.74) !important;
+}
+
+.dna-section {
+  grid-template-columns: minmax(23rem, 30vw) minmax(0, 1fr) !important;
+  gap: clamp(3.5rem, 6vw, 7rem) !important;
+}
+
+.dna-section .dna-heading h2 {
+  max-width: 10ch !important;
+  font-size: clamp(2.9rem, 4.05vw, 4.9rem) !important;
+  line-height: 0.94 !important;
+}
+
+.reference-universe {
+  display: none !important;
+}
+
+.dna-section .film-reference-grid {
+  height: min(67vh, 43rem) !important;
+  grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+  grid-template-rows: repeat(8, minmax(0, 1fr)) !important;
+  gap: clamp(0.9rem, 1.05vw, 1.25rem) !important;
+}
+
+.dna-section .film-card,
+.dna-section .film-card[data-active="true"] {
+  filter: saturate(1.03) brightness(1.08) contrast(1.02) !important;
+  transform: none !important;
+}
+
+.dna-section .film-card:nth-child(1),
+.dna-section .film-card:nth-child(1)[data-active="true"] {
+  grid-column: 1 / 7 !important;
+  grid-row: 1 / 5 !important;
+}
+
+.dna-section .film-card:nth-child(2),
+.dna-section .film-card:nth-child(2)[data-active="true"] {
+  grid-column: 7 / 13 !important;
+  grid-row: 1 / 5 !important;
+}
+
+.dna-section .film-card:nth-child(3),
+.dna-section .film-card:nth-child(3)[data-active="true"] {
+  grid-column: 1 / 7 !important;
+  grid-row: 5 / 9 !important;
+}
+
+.dna-section .film-card:nth-child(4),
+.dna-section .film-card:nth-child(4)[data-active="true"] {
+  grid-column: 7 / 13 !important;
+  grid-row: 5 / 9 !important;
+}
+
+.dna-section .film-card:nth-child(n+5) {
+  display: none !important;
+}
+
+.dna-section .film-card[data-active="true"] {
+  z-index: 4 !important;
+  outline: 1px solid rgba(239,234,224,0.42) !important;
+  box-shadow: 0 26px 90px rgba(0,0,0,0.48), 0 0 0 1px color-mix(in srgb, var(--amber) 36%, transparent) !important;
+}
+
+.dna-section--active-look .film-card:not([data-active="true"]) {
+  opacity: 0.56 !important;
+  filter: saturate(0.78) brightness(0.86) contrast(1.02) !important;
+}
+
+.film-card__glass h3 {
+  font-size: clamp(1.35rem, 1.9vw, 2.25rem) !important;
+  line-height: 0.98 !important;
+}
+
+.modal-still-placeholder--photo {
+  filter: saturate(1.02) brightness(1.16) contrast(1.02) !important;
+}
+
+@media (max-width: 1100px) {
+  .opening-section .opening-copy {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: minmax(5rem, 0.5fr) auto auto auto !important;
+    padding: 7rem 2rem 4rem !important;
+  }
+
+  .opening-section .kinetic-title,
+  .opening-section .opening-logline,
+  .opening-identity,
+  .opening-section .microcopy {
+    grid-column: 1 / 2 !important;
+    justify-self: start !important;
+    width: min(100%, 38rem) !important;
+  }
+
+  .opening-section .opening-logline {
+    grid-row: 4 / 5 !important;
+    margin-top: 1rem !important;
+  }
+}
+
 /* --------------------------------------------------------------------------
    Readability safety pass: keep titles inside frame and lift all imagery.
    -------------------------------------------------------------------------- */

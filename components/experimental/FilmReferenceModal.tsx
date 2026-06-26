@@ -5,7 +5,6 @@ import type { CSSProperties } from "react";
 import { Flip } from "gsap/Flip";
 import { gsap } from "gsap";
 import type { FilmReference } from "@/data/filmReferences";
-import { siteContent } from "@/data/siteContent";
 import { LiquidGlass } from "./LiquidGlass";
 
 gsap.registerPlugin(Flip);
@@ -51,9 +50,9 @@ export function FilmReferenceModal({ film, flipState, onClose, onPreview, onRest
 
   const stills = [
     [film.stillFocus, film.stillImage],
-    ["Refrigerator note", siteContent.assets.note],
-    ["Object return", siteContent.assets.objects],
-    ["Final doorway", siteContent.assets.door]
+    ["Lighting temperature", film.stillImage],
+    ["Composition reference", film.stillImage],
+    ["Atmosphere reference", film.stillImage]
   ];
 
   return (
@@ -71,7 +70,7 @@ export function FilmReferenceModal({ film, flipState, onClose, onPreview, onRest
                 {
                   "--film-a": film.palette[index % film.palette.length],
                   "--film-b": film.palette[(index + 2) % film.palette.length],
-                  backgroundImage: `linear-gradient(135deg, color-mix(in srgb, ${film.palette[4]} 48%, transparent), color-mix(in srgb, ${film.palette[2]} 18%, transparent)), url(${image})`
+                  backgroundImage: `linear-gradient(135deg, color-mix(in srgb, ${film.palette[4]} 12%, transparent), color-mix(in srgb, ${film.palette[2]} 6%, transparent)), url(${image})`
                 } as CSSProperties
               }
             >

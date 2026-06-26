@@ -27,7 +27,7 @@ export function FilmReferenceCard({ film, active = false, onOpen }: FilmReferenc
             "--film-a": film.palette[0],
             "--film-b": film.palette[2],
             "--film-c": film.palette[4],
-            backgroundImage: `linear-gradient(145deg, color-mix(in srgb, ${film.palette[4]} 42%, transparent), color-mix(in srgb, ${film.palette[2]} 22%, transparent)), url(${film.stillImage})`
+            backgroundImage: `linear-gradient(145deg, color-mix(in srgb, ${film.palette[4]} 14%, transparent), color-mix(in srgb, ${film.palette[2]} 8%, transparent)), url(${film.stillImage})`
           } as CSSProperties
         }
       >

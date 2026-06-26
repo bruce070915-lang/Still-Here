@@ -20,7 +20,7 @@ export function ReferenceColorStudies() {
           <div
             className="reference-study-image"
             style={{
-              backgroundImage: `linear-gradient(135deg, color-mix(in srgb, ${film.palette[4]} 52%, transparent), color-mix(in srgb, ${film.palette[2]} 18%, transparent) 54%, color-mix(in srgb, ${film.palette[0]} 14%, transparent)), url(${film.stillImage})`
+              backgroundImage: `linear-gradient(135deg, color-mix(in srgb, ${film.palette[4]} 14%, transparent), color-mix(in srgb, ${film.palette[2]} 8%, transparent) 54%, color-mix(in srgb, ${film.palette[0]} 6%, transparent)), url(${film.stillImage})`
             }}
           />
           <div className="reference-study-glass">

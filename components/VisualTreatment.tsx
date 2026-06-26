@@ -268,6 +268,10 @@ export function VisualTreatment() {
           <div className="opening-copy">
             <p className="microcopy">Electronic lock BEEP / Memory trapped behind liquid glass</p>
             <KineticTitle />
+            <div className="opening-identity">
+              <span>{siteContent.subtitle}</span>
+              <span>{siteContent.credit}</span>
+            </div>
             <p className="opening-logline">{siteContent.logline}</p>
           </div>
         </SectionShell>
