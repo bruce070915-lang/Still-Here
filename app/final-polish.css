@@ -281,6 +281,29 @@
   visibility: visible !important;
 }
 
+html body .dna-section .film-reference-grid .film-card:not(:first-child) .film-card__top {
+  display: flex !important;
+  visibility: visible !important;
+}
+
+html body .dna-section .film-reference-grid .film-card:not(:first-child) .film-card__glass p {
+  display: block !important;
+  visibility: visible !important;
+}
+
+html body .dna-section .film-reference-grid .film-card:not(:first-child) .color-strip {
+  display: flex !important;
+  visibility: visible !important;
+  height: 0.55rem !important;
+  opacity: 0.82 !important;
+}
+
+html body .dna-section .film-reference-grid .film-card[data-active="true"] .film-card__top,
+html body .dna-section .film-reference-grid .film-card[data-active="true"] .film-card__glass p,
+html body .dna-section .film-reference-grid .film-card[data-active="true"] .color-strip {
+  opacity: 1 !important;
+}
+
 .dna-section .film-card:nth-child(1),
 .dna-section .film-card:nth-child(1)[data-active="true"] {
   grid-column: 1 / 7 !important;
