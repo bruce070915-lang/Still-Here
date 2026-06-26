@@ -4534,3 +4534,206 @@ html[data-cinematic-look="a-ghost-story"] .section-shell {
 .closing-final-thesis span {
   font-size: clamp(1.85rem, 2.55vw, 3.1rem) !important;
 }
+
+/* --------------------------------------------------------------------------
+   Design QA control pass: remove visual competition and restore editorial order.
+   This pass intentionally avoids new effects, features, or animation ideas.
+   -------------------------------------------------------------------------- */
+
+.scene-glass {
+  opacity: 0.045 !important;
+}
+
+.section-eyebrow {
+  opacity: 0.42 !important;
+}
+
+.hero-return-note,
+.hero-door-slit,
+.opening-section .microcopy {
+  opacity: 0.2 !important;
+}
+
+.opening-section .opening-logline {
+  max-width: 30rem !important;
+  color: rgba(239,234,224,0.58) !important;
+}
+
+.logline-visual-column .note-glass,
+.mood-texture-note,
+.theme-indicator {
+  opacity: 0.5 !important;
+}
+
+.chapter-title-field span,
+.chapter-object-echo,
+.bag-vortex {
+  opacity: 0.18 !important;
+}
+
+.story-chapter .chapter-copy {
+  max-width: 36rem !important;
+}
+
+.story-chapter .chapter-copy p,
+.nonsync-section .split-heading p,
+.dna-note,
+.visual-mood-section .mood-heading p {
+  color: rgba(239,234,224,0.62) !important;
+}
+
+.nonsync-still-strip {
+  opacity: 0.58 !important;
+}
+
+.visual-language-section > h2 {
+  max-width: 50rem !important;
+  font-size: clamp(3.8rem, 5.8vw, 7.1rem) !important;
+}
+
+.visual-language-section .language-grid {
+  opacity: 0.78 !important;
+}
+
+.director-section {
+  padding: 0 !important;
+  overflow: hidden !important;
+  background: #050607 !important;
+}
+
+.director-profile {
+  position: relative !important;
+  min-height: 100svh !important;
+  height: 100svh !important;
+  display: grid !important;
+  grid-template-columns: minmax(34rem, 46vw) minmax(0, 1fr) !important;
+  gap: clamp(4rem, 6vw, 7rem) !important;
+  align-items: center !important;
+  padding: 0 clamp(5rem, 7vw, 8rem) 0 0 !important;
+  overflow: hidden !important;
+  background:
+    linear-gradient(90deg, rgba(5,6,7,0.08), #050607 54%, #050607),
+    radial-gradient(circle at 76% 42%, rgba(158,180,198,0.09), transparent 24rem),
+    #050607 !important;
+}
+
+.director-photo {
+  position: relative !important;
+  grid-column: 1 / 2 !important;
+  grid-row: 1 !important;
+  left: auto !important;
+  right: auto !important;
+  top: auto !important;
+  width: 100% !important;
+  height: 100svh !important;
+  margin: 0 !important;
+  clip-path: none !important;
+  opacity: 0.88 !important;
+  border-right: 1px solid rgba(239,234,224,0.1) !important;
+  transform: none !important;
+}
+
+.director-photo::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,0.04), rgba(0,0,0,0.16) 56%, rgba(5,6,7,0.58)),
+    linear-gradient(180deg, rgba(0,0,0,0.2), transparent 28%, rgba(0,0,0,0.34)) !important;
+  pointer-events: none !important;
+}
+
+.director-photo img {
+  object-position: 60% center !important;
+  filter: saturate(0.78) brightness(0.82) contrast(1.08) !important;
+}
+
+.director-copy {
+  position: relative !important;
+  z-index: 2 !important;
+  grid-column: 2 / 3 !important;
+  grid-row: 1 !important;
+  align-self: center !important;
+  justify-self: start !important;
+  width: min(44rem, 100%) !important;
+  max-width: 44rem !important;
+  padding: clamp(6rem, 10vh, 8rem) 0 clamp(4.5rem, 7vh, 6rem) !important;
+}
+
+.director-eyebrow {
+  margin: 0 0 clamp(1rem, 2vh, 1.35rem) !important;
+  font-family: "IBM Plex Mono", monospace !important;
+  font-size: 0.7rem !important;
+  line-height: 1 !important;
+  letter-spacing: 0.34em !important;
+  text-transform: uppercase !important;
+  color: rgba(214,161,106,0.78) !important;
+}
+
+.director-copy h2 {
+  margin: 0 0 clamp(1.2rem, 2.2vh, 1.7rem) !important;
+  max-width: none !important;
+  font-size: clamp(5rem, 7.1vw, 8.4rem) !important;
+  line-height: 0.86 !important;
+  letter-spacing: -0.075em !important;
+  color: rgba(250,247,238,0.94) !important;
+}
+
+.director-roleline {
+  width: min(100%, 36rem) !important;
+  margin: 0 0 clamp(2rem, 4vh, 3rem) !important;
+  padding-bottom: clamp(1rem, 1.8vh, 1.3rem) !important;
+  border-bottom: 1px solid rgba(239,234,224,0.16) !important;
+  font-family: "Space Grotesk", system-ui, sans-serif !important;
+  font-size: clamp(0.88rem, 1vw, 1.04rem) !important;
+  line-height: 1.25 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: rgba(239,234,224,0.58) !important;
+}
+
+.director-copy .bio {
+  width: min(100%, 35.5rem) !important;
+  max-width: 35.5rem !important;
+  margin: 0 !important;
+  font-size: clamp(0.96rem, 1.02vw, 1.08rem) !important;
+  line-height: 1.68 !important;
+  color: rgba(239,234,224,0.66) !important;
+}
+
+.director-copy blockquote {
+  width: min(100%, 34rem) !important;
+  max-width: 34rem !important;
+  margin: clamp(3rem, 5vh, 4.25rem) 0 0 !important;
+  padding: 0 0 0 clamp(1.15rem, 1.5vw, 1.45rem) !important;
+  border-left: 1px solid rgba(214,161,106,0.55) !important;
+  font-size: clamp(1.65rem, 2.05vw, 2.35rem) !important;
+  line-height: 1.12 !important;
+  color: rgba(250,247,238,0.86) !important;
+}
+
+.director-label,
+.director-copy .vertical-meta {
+  display: none !important;
+}
+
+.actor-meta-glass,
+.actor-stage-note,
+.film-card__glass,
+.sound-event {
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.1),
+    0 16px 42px rgba(0,0,0,0.18) !important;
+}
+
+@media (max-width: 1100px) {
+  .director-profile {
+    grid-template-columns: minmax(24rem, 42vw) minmax(0, 1fr) !important;
+    gap: clamp(2.5rem, 4vw, 4rem) !important;
+    padding-right: clamp(2rem, 5vw, 4rem) !important;
+  }
+
+  .director-copy h2 {
+    font-size: clamp(4rem, 8vw, 6.2rem) !important;
+  }
+}
